@@ -1,0 +1,19 @@
+# https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
+#!include:.gitignore
+.git
+.gitignore
+.editorconfig
+example.py
+pre-deploy.sh
+deploy.sh
+README.md
+Pipfile
+Pipfile.lock
+env-example
+env-yaml-example
+
+# app-specific
+server.py
+run_server.sh
+templates/
+static/
