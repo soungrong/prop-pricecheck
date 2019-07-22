@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flask = "*"
+frozen-flask = "*"
+python-dotenv = "*"
+
+[packages]
+pynamodb = "*"
+google-cloud-error-reporting = "*"
+
+[requires]
+python_version = "3.7"
