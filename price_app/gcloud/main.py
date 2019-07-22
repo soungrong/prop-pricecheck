@@ -12,6 +12,6 @@ def process_form(request):
     global gcloud_errors
 
     try:
-        pass
+        return 'processed the post request.'
     except:
         gcloud_errors.report_exception()

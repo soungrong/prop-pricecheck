@@ -14,3 +14,6 @@ google-cloud-error-reporting = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+generate-static = "python -m price_app.scripts.generate_static"
