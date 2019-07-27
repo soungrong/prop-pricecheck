@@ -7,6 +7,9 @@ verify_ssl = true
 flask = "*"
 frozen-flask = "*"
 python-dotenv = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
+price-app = {editable = true,path = "."}
 
 [packages]
 pynamodb = "*"

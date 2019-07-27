@@ -1,6 +1,9 @@
 from flask_frozen import Freezer
 
-from price_app.local import app
+from price_app import create_app
+
+
+app = create_app()
 
 # https://pythonhosted.org/Frozen-Flask/
 freezer = Freezer(app)
