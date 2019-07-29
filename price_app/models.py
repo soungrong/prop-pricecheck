@@ -29,6 +29,7 @@ class Property(db.Model):
     property_type_pk = db.Column('property_type', db.Integer, db.ForeignKey('property_type.pk'))
     state_pk = db.Column('state', db.Integer, db.ForeignKey('state.pk'))
     city_pk = db.Column('city', db.Integer, db.ForeignKey('city.pk'))
+    town_pk = db.Column('town', db.Integer, db.ForeignKey('town.pk'))
 
 
 class State(db.Model):
@@ -47,3 +48,12 @@ class City(db.Model):
 
     state = db.Column('state', db.Integer, db.ForeignKey('state.pk'))
     properties = db.relationship('Property', back_populates="city")
+
+
+class Town(db.Model):
+    __tablename__ = 'town'
+    pk = db.Column(db.Integer, primary_key=True)
+    name = db.Column('name', db.String, nullable=False)
+
+    city = db.Column('city', db.Integer, db.ForeignKey('city.pk'))
+    properties = db.relationship('Property', back_populates="town")
