@@ -7,16 +7,16 @@ class PropertyType(db.Model):
     name = db.Column('name', db.String, nullable=False)
     landed = db.Column('landed', db.Boolean, nullable=False)
 
-    properties = db.relationship('Property', back_populates="property_type")
+    properties = db.relationship('Property', backref="property_type")
 
 
 class Property(db.Model):
     __tablename__ = 'property'
     pk = db.Column(db.Integer, primary_key=True)
-    price = db.Column('price', db.Integer, nullable=False)
-    size = db.Column('size', db.Integer, nullable=False)
-    position = db.Column('position', db.Enum('Intermediate', 'Corner', 'EndLot'))
-    floors = db.Column('floors', db.Integer)
+    price = db.Column('price', db.Float(precision=2), nullable=False)
+    size = db.Column('size', db.Float, nullable=False)
+    position = db.Column('position', db.Enum('Intermediate', 'Corner', 'EndLot', ''))
+    floors = db.Column('floors', db.Float(precision=1))
     rooms = db.Column('rooms', db.Integer, nullable=False)
     bathrooms = db.Column('bathrooms', db.Integer, nullable=False)
     plus_rooms = db.Column('plus_rooms', db.Integer)
@@ -26,10 +26,10 @@ class Property(db.Model):
     penthouse = db.Column('penthouse', db.Boolean, default=False, nullable=False)
     furnishing = db.Column('sub_type', db.Enum('Unfurnished', 'Partly Furnished', 'Fully Furnished'))
 
-    property_type_pk = db.Column('property_type', db.Integer, db.ForeignKey('property_type.pk'))
-    state_pk = db.Column('state', db.Integer, db.ForeignKey('state.pk'))
-    city_pk = db.Column('city', db.Integer, db.ForeignKey('city.pk'))
-    town_pk = db.Column('town', db.Integer, db.ForeignKey('town.pk'))
+    property_type_pk = db.Column(db.Integer, db.ForeignKey('property_type.pk'))
+    state_pk = db.Column(db.Integer, db.ForeignKey('state.pk'))
+    city_pk = db.Column(db.Integer, db.ForeignKey('city.pk'))
+    town_pk = db.Column(db.Integer, db.ForeignKey('town.pk'))
 
 
 class State(db.Model):
@@ -37,8 +37,8 @@ class State(db.Model):
     pk = db.Column(db.Integer, primary_key=True)
     name = db.Column('name', db.String, nullable=False)
 
-    cities = db.relationship('City', back_populates="state")
-    properties = db.relationship('Property', back_populates="state")
+    cities = db.relationship('City', backref="state")
+    properties = db.relationship('Property', backref="state")
 
 
 class City(db.Model):
@@ -46,8 +46,9 @@ class City(db.Model):
     pk = db.Column(db.Integer, primary_key=True)
     name = db.Column('name', db.String, nullable=False)
 
-    state = db.Column('state', db.Integer, db.ForeignKey('state.pk'))
-    properties = db.relationship('Property', back_populates="city")
+    state_pk = db.Column(db.Integer, db.ForeignKey('state.pk'))
+    towns = db.relationship('Town', backref="city")
+    properties = db.relationship('Property', backref="city")
 
 
 class Town(db.Model):
@@ -55,5 +56,5 @@ class Town(db.Model):
     pk = db.Column(db.Integer, primary_key=True)
     name = db.Column('name', db.String, nullable=False)
 
-    city = db.Column('city', db.Integer, db.ForeignKey('city.pk'))
-    properties = db.relationship('Property', back_populates="town")
+    city_pk = db.Column(db.Integer, db.ForeignKey('city.pk'))
+    properties = db.relationship('Property', backref="town")
