@@ -11,7 +11,8 @@ from price_app.local import bp
 
 def create_app():
     app = Flask('price_app')
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+        'SQLALCHEMY_DATABASE_URI')
 
     _instance_config(app)
     _setup_cli(app)

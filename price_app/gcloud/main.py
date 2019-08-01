@@ -13,5 +13,5 @@ def process_form(request):
 
     try:
         return 'processed the post request.'
-    except:
+    except BaseException:
         gcloud_errors.report_exception()

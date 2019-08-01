@@ -15,7 +15,8 @@ class Property(db.Model):
     pk = db.Column(db.Integer, primary_key=True)
     price = db.Column('price', db.Float(precision=2), nullable=False)
     size = db.Column('size', db.Float, nullable=False)
-    position = db.Column('position', db.Enum('Intermediate', 'Corner', 'EndLot', ''))
+    position = db.Column('position', db.Enum(
+        'Intermediate', 'Corner', 'EndLot', ''))
     floors = db.Column('floors', db.Float(precision=1))
     rooms = db.Column('rooms', db.Integer, nullable=False)
     bathrooms = db.Column('bathrooms', db.Integer, nullable=False)
@@ -23,8 +24,10 @@ class Property(db.Model):
     car_parks = db.Column('car_parks', db.Integer)
     studio = db.Column('studio', db.Boolean, default=False, nullable=False)
     soho = db.Column('soho', db.Boolean, default=False, nullable=False)
-    penthouse = db.Column('penthouse', db.Boolean, default=False, nullable=False)
-    furnishing = db.Column('sub_type', db.Enum('Unfurnished', 'Partly Furnished', 'Fully Furnished'))
+    penthouse = db.Column('penthouse', db.Boolean,
+                          default=False, nullable=False)
+    furnishing = db.Column('furnishing', db.Enum(
+        'Unfurnished', 'Partly Furnished', 'Fully Furnished'))
 
     property_type_pk = db.Column(db.Integer, db.ForeignKey('property_type.pk'))
     state_pk = db.Column(db.Integer, db.ForeignKey('state.pk'))
