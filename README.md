@@ -21,6 +21,12 @@ The purpose of these multiple deployment hoops is to reduce the processing and
 storage overhead in production, which will hopefully keep any hosting costs low
 and result in more responsive site interaction.
 
+# Create/Apply migrations
+sh update_db.sh
+
+# Import dataset from CSV file
+sh populate_db.sh
+
 # Run Flask server for local dev
 sh run_local.sh
 
