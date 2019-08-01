@@ -10,6 +10,7 @@ python-dotenv = "*"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 price-app = {editable = true,path = "."}
+autopep8 = "*"
 
 [packages]
 pynamodb = "*"
