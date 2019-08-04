@@ -11,6 +11,7 @@ flask-migrate = "*"
 flask-sqlalchemy = "*"
 price-app = {editable = true,path = "."}
 autopep8 = "*"
+ipython = "*"
 
 [packages]
 pynamodb = "*"
@@ -21,3 +22,4 @@ python_version = "3.7"
 
 [scripts]
 generate-static = "python -m price_app.scripts.generate_static"
+shell = "python -m price_app.scripts.shell"

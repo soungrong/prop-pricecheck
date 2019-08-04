@@ -27,6 +27,9 @@ sh update_db.sh
 # Import dataset from CSV file
 sh populate_db.sh
 
+# Run interactive shell
+pipenv run shell
+
 # Run Flask server for local dev
 sh run_local.sh
 
