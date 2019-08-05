@@ -10,14 +10,12 @@ def process_csv(file_path, delimiter=',', quotechar='"'):
         data = csv.DictReader(file, delimiter=delimiter, quotechar=quotechar)
 
         coerce_int = ('price', 'rooms', 'plus_rooms', 'bathrooms',
-                      'car_parks', 'landed', 'penthouse', 'levels', 'storeys',
+                      'car_parks', 'landed', 'penthouse', 'floors',
                       'soho', 'studio', 'size')
 
         for row in data:
             for header in coerce_int:
-                if header == 'levels':
-                    row[header] = string_levels_to_int(row[header])
-                elif (header == 'storeys' or header == 'price' or header == 'size') and row[header]:
+                if (header == 'floors' or header == 'price' or header == 'size') and row[header]:
                     row[header] = float(row[header])
                 elif row[header]:
                     row[header] = int(row[header])
@@ -27,13 +25,9 @@ def process_csv(file_path, delimiter=',', quotechar='"'):
             process_item(**row, row=row)
 
 
-def string_levels_to_int(string):
-    return {'Duplex': 1, 'Triplex': 2, '': 0}[string]
-
-
 def process_item(town, city, state, price, rooms, plus_rooms, bathrooms,
-                 car_parks, property_type, landed, position, penthouse, levels,
-                 storeys, soho, studio, size, furnishing, row=None):
+                 car_parks, property_type, landed, position, penthouse, sub_type,
+                 floors, soho, studio, size, furnishing, row=None):
 
     item_type, _ = get_one_or_create(PropertyType, name=property_type,
                                      landed=landed)
@@ -48,7 +42,8 @@ def process_item(town, city, state, price, rooms, plus_rooms, bathrooms,
                                 price=price,
                                 size=size,
                                 position=position,
-                                floors=levels,
+                                sub_type=sub_type,
+                                floors=floors,
                                 rooms=rooms,
                                 bathrooms=bathrooms,
                                 plus_rooms=plus_rooms,

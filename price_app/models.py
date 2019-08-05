@@ -17,6 +17,7 @@ class Property(db.Model):
     size = db.Column('size', db.Float, nullable=False)
     position = db.Column('position', db.Enum(
         'Intermediate', 'Corner', 'EndLot', ''))
+    sub_type = db.Column('sub_type', db.Enum('Duplex', 'Triplex', ''))
     floors = db.Column('floors', db.Float(precision=1))
     rooms = db.Column('rooms', db.Integer, nullable=False)
     bathrooms = db.Column('bathrooms', db.Integer, nullable=False)
