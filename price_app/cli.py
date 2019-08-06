@@ -10,7 +10,9 @@ from price_app.scripts import csv_to_sql, csv_to_pandas
 @click.option('--quotechar', default='"', help='CSV quotechar')
 @with_appcontext
 def csv_to_sql_command(file_path, delimiter, quotechar):
-    """Create SQL records with a CSV file of property listings."""
+    """
+    Create SQL records with a CSV file of property listings.
+    """
     click.echo('Processing {}'.format(file_path))
     csv_to_sql.process_csv(file_path, delimiter, quotechar)
     click.echo('Processing complete.')
@@ -22,7 +24,12 @@ def csv_to_sql_command(file_path, delimiter, quotechar):
 @click.option('--quotechar', default='"', help='CSV quotechar')
 @with_appcontext
 def csv_to_pandas_command(file_path, delimiter, quotechar):
-    """Create pandas output with a CSV file of property listings."""
+    """
+    Process CSV file of property listings, and output result to separate CSV.
+    """
     click.echo('Processing {}'.format(file_path))
-    csv_to_pandas.process_csv(file_path, delimiter, quotechar)
+    data = csv_to_pandas.process_csv(file_path, delimiter, quotechar)
     click.echo('Processing complete.')
+
+    output_csv = csv_to_pandas.save_to_csv(data)
+    click.echo('Saved to {}.'.format(output_csv))

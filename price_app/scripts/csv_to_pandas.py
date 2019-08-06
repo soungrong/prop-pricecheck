@@ -45,4 +45,9 @@ def process_csv(file_path, delimiter=',', quotechar='"'):
         )
 
     pivot_2['count'] = pivot.groupby(level=(0,1,2,3,4,5,6,7,8,9,10,11,12,13)).size()
-    pivot_2.to_csv('pandas-{}.csv'.format(datetime.now().strftime("%c").replace(' ', '-')))
+
+    return pivot_2
+
+
+def save_to_csv(dataframe):
+    return dataframe.to_csv('pandas-{}.csv'.format(datetime.now().strftime("%c").replace(' ', '-')))
