@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pipenv run flask process-csv $*
+pipenv run flask csv-to-sql $*
