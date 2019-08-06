@@ -4,7 +4,7 @@ import os
 from flask import Flask
 from flask_migrate import Migrate
 
-from price_app.cli import csv_to_sql_command
+from price_app.cli import csv_to_sql_command, csv_to_pandas_command
 from price_app.database import db
 from price_app.local import bp
 
@@ -32,6 +32,7 @@ def _instance_config(app):
 
 def _setup_cli(app):
     app.cli.add_command(csv_to_sql_command)
+    app.cli.add_command(csv_to_pandas_command)
 
 
 def _register_blueprints(app):

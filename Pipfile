@@ -12,6 +12,8 @@ flask-sqlalchemy = "*"
 price-app = {editable = true,path = "."}
 autopep8 = "*"
 ipython = "*"
+pandas = "*"
+jupyter = "*"
 
 [packages]
 pynamodb = "*"

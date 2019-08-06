@@ -11,6 +11,8 @@ setup(
         'frozen-flask',
         'python-dotenv',
         'flask-migrate',
-        'flask-sqlalchemy'
+        'flask-sqlalchemy',
+        'ipython',
+        'pandas'
     ],
 )
