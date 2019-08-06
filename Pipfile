@@ -16,8 +16,8 @@ pandas = "*"
 jupyter = "*"
 
 [packages]
-pynamodb = "*"
 google-cloud-error-reporting = "*"
+flask-pymongo = "*"
 
 [requires]
 python_version = "3.7"

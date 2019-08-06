@@ -1,0 +1,12 @@
+version: "3.2"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    restart: always
+    # environment:
+      # - MONGO_INITDB_ROOT_USERNAME=root
+      # - MONGO_INITDB_ROOT_PASSWORD=pass
+    ports:
+      - "27017:27017"
