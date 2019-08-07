@@ -50,4 +50,8 @@ def process_csv(file_path, delimiter=',', quotechar='"'):
 
 
 def save_to_csv(dataframe):
-    return dataframe.to_csv('pandas-{}.csv'.format(datetime.now().strftime("%c").replace(' ', '-')))
+    file_name = 'pandas-{}.csv'.format(
+        datetime.now().strftime("%c").replace(' ', '-'))
+
+    dataframe.to_csv(file_name)
+    return file_name
