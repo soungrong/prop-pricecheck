@@ -1,6 +1,6 @@
 import csv
 
-from price_app.database import db
+from price_app.database import sql
 from price_app.models import Property, PropertyType, State, City, Town
 
 
@@ -59,13 +59,13 @@ def process_item(town, city, state, price, rooms, plus_rooms, bathrooms,
 
 
 def get_one_or_create(model, **kwargs):
-    instance = db.session.query(model).filter_by(**kwargs).one_or_none()
+    instance = sql.session.query(model).filter_by(**kwargs).one_or_none()
     if instance:
         print('Found {}'.format(instance))
         return instance, False
     else:
         instance = model(**kwargs)
-        db.session.add(instance)
-        db.session.commit()
+        sql.session.add(instance)
+        sql.session.commit()
         print('Created {}'.format(instance))
         return instance, True

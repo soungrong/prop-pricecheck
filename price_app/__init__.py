@@ -1,12 +1,10 @@
-from importlib import import_module
 import os
 
 from flask import Flask
 from flask_migrate import Migrate
-from flask_pymongo import PyMongo
 
 from price_app.cli import csv_to_sql_command, csv_to_pandas_command
-from price_app.database import db
+from price_app.database import mongo, sql
 from price_app.local import bp
 
 
@@ -42,10 +40,10 @@ def _register_blueprints(app):
 
 
 def _setup_sqlalchemy(app):
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, sql)
     import price_app.models
-    db.init_app(app)
+    sql.init_app(app)
 
 
 def _setup_mongo(app):
-    mongo = PyMongo(app)
+    mongo.init_app(app)

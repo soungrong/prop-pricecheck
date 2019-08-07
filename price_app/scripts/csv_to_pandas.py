@@ -3,52 +3,55 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
+from price_app.database import mongo
 
-# limit element output to 2 decimal places
+
+# limit display output to 2 decimal places
 pd.options.display.float_format = '{:,.2f}'.format
 
 pd.options.display.max_rows = 500
 
 
 def process_csv(file_path, delimiter=',', quotechar='"'):
-    df = pd.read_csv(file_path, delimiter=delimiter, quotechar=quotechar)
+    dataframe = pd.read_csv(file_path, delimiter=delimiter, quotechar=quotechar)
 
     to_drop = ['city', 'state']
-    df.drop(columns=to_drop, inplace=True)
+    dataframe.drop(columns=to_drop, inplace=True)
 
-    df.fillna(0, inplace=True)
+    dataframe.fillna(0, inplace=True)
 
-    prop_index = ['town', 'property_type', 'landed', 'rooms', 'plus_rooms',
+    full_index = ['town', 'property_type', 'landed', 'rooms', 'plus_rooms',
         'bathrooms', 'car_parks', 'sub_type', 'floors', 'penthouse', 'soho',
         'studio', 'furnishing', 'position', 'price', 'size']
 
-    pivot = pd.pivot_table(df,
+    pivot_source = pd.pivot_table(dataframe,
         values=['price','size'],
-        index=prop_index,
+        index=full_index,
         aggfunc={
             'price': np.median,
             'size': np.median,
             },
         )
 
-    prop_index_2 = ['town', 'property_type', 'landed', 'rooms', 'plus_rooms',
+    index_criteria = ['town', 'property_type', 'landed', 'rooms', 'plus_rooms',
         'bathrooms', 'car_parks', 'sub_type', 'floors', 'penthouse', 'soho',
         'studio', 'furnishing', 'position']
 
-    pivot_2 = pd.pivot_table(df,
+    pivot_processed = pd.pivot_table(dataframe,
         values=['price','size'],
-        index=prop_index_2,
+        index=index_criteria,
         aggfunc={
             'price': np.median,
             'size': np.median,
             },
         )
 
-    pivot_2['count'] = pivot.groupby(level=(0,1,2,3,4,5,6,7,8,9,10,11,12,13)).size()
+    # count how many records fit the index_criteria (this excludes price & size)
+    pivot_processed['count'] = pivot_source.groupby(level=(0,1,2,3,4,5,6,7,8,9,10,11,12,13)).size()
 
-    pivot_2['price_per_sq_ft'] = pivot_2['price'] / pivot_2['size']
+    pivot_processed['price_per_sq_ft'] = pivot_processed['price'] / pivot_processed['size']
 
-    rounded = pivot_2.round(decimals=2)
+    rounded = pivot_processed.round(decimals=2)
 
     return rounded
 
@@ -58,4 +61,14 @@ def save_to_csv(dataframe):
         datetime.now().strftime("%c").replace(' ', '-'))
 
     dataframe.to_csv(file_name)
+
     return file_name
+
+
+def save_to_mongo(dataframe):
+    # flatten rows/colums into individual dict records
+    dataframe_dict = dataframe.reset_index().to_dict(orient='records')
+
+    result = mongo.db.posts.insert_many(dataframe_dict)
+
+    return result.inserted_ids
