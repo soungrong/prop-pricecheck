@@ -46,7 +46,11 @@ def process_csv(file_path, delimiter=',', quotechar='"'):
 
     pivot_2['count'] = pivot.groupby(level=(0,1,2,3,4,5,6,7,8,9,10,11,12,13)).size()
 
-    return pivot_2
+    pivot_2['price_per_sq_ft'] = pivot_2['price'] / pivot_2['size']
+
+    rounded = pivot_2.round(decimals=2)
+
+    return rounded
 
 
 def save_to_csv(dataframe):
