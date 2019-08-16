@@ -8,18 +8,18 @@ import googlemaps
 def geocode_towns(dataframe):
     gmaps = googlemaps.Client(key=os.getenv('GOOGLE_MAPS_KEY'))
 
-    town_list = dataframe.reset_index()['town'].unique()
-    town_geocoded = collections.defaultdict(dict)
+    towns_names = dataframe.reset_index()['town'].unique()
+    towns_geocoded = []
 
-    for town in town_list:
+    for town in towns_names:
         request = gmaps.geocode(town, region='my')
         # this dict and array format is required by MongoDB
-        town_geocoded[town] = [
-            request[0]['geometry']['location']['lng'],
-            request[0]['geometry']['location']['lat']
-            ]
+        geo_entry = dict([(town,
+            [request[0]['geometry']['location']['lng'], request[0]['geometry']['location']['lat']]
+            )])
+        towns_geocoded.append(geo_entry)
 
-    return town_geocoded
+    return towns_geocoded
 
 
 def save_to_json(geocode_dict):
