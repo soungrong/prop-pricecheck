@@ -1,382 +1,97 @@
 {
-    "ADIVA Desa ParkCity": {
-        "lat": 3.1881946,
-        "lng": 101.6278662
-    },
-    "Alam Damai": {
-        "lat": 3.060074,
-        "lng": 101.7406559
-    },
-    "Ampang": {
-        "lat": 3.16648,
-        "lng": 101.7483451
-    },
-    "Ampang Hilir": {
-        "lat": 3.1580752,
-        "lng": 101.7384594
-    },
-    "Bandar Damai Perdana": {
-        "lat": 3.047274,
-        "lng": 101.740761
-    },
-    "Bandar Menjalara": {
-        "lat": 3.193871,
-        "lng": 101.63088
-    },
-    "Bandar Sri Damansara": {
-        "lat": 3.196851,
-        "lng": 101.6111781
-    },
-    "Bandar Tasik Selatan": {
-        "lat": 3.0761039,
-        "lng": 101.7112674
-    },
-    "Bangsar": {
-        "lat": 3.12901,
-        "lng": 101.6797838
-    },
-    "Bangsar South": {
-        "lat": 3.1106019,
-        "lng": 101.6662729
-    },
-    "Batu Caves": {
-        "lat": 3.2378844,
-        "lng": 101.6840385
-    },
-    "Brickfields": {
-        "lat": 3.129225,
-        "lng": 101.6861389
-    },
-    "Bukit Bintang": {
-        "lat": 3.1467855,
-        "lng": 101.7113043
-    },
-    "Bukit Damansara": {
-        "lat": 3.149137,
-        "lng": 101.653394
-    },
-    "Bukit Jalil": {
-        "lat": 3.0586745,
-        "lng": 101.6917068
-    },
-    "Bukit Kiara": {
-        "lat": 3.142163,
-        "lng": 101.644358
-    },
-    "Bukit Ledang": {
-        "lat": 3.1501178,
-        "lng": 101.672193
-    },
-    "Bukit Persekutuan": {
-        "lat": 3.137817000000001,
-        "lng": 101.679421
-    },
-    "Bukit Tunku (Kenny Hills)": {
-        "lat": 3.163226,
-        "lng": 101.690783
-    },
-    "Canary Residence": {
-        "lat": 3.0898322,
-        "lng": 101.7497683
-    },
-    "Casa Rimba": {
-        "lat": 3.2197822,
-        "lng": 101.7361417
-    },
-    "Chan Sow Lin": {
-        "lat": 3.1278462,
-        "lng": 101.7155894
-    },
-    "Cheras": {
-        "lat": 3.1068447,
-        "lng": 101.7259197
-    },
-    "City Centre": {
-        "lat": 3.146642,
-        "lng": 101.6958449
-    },
-    "Country Heights Damansara": {
-        "lat": 3.178361,
-        "lng": 101.6210599
-    },
-    "Cyberjaya": {
-        "lat": 2.921318,
-        "lng": 101.6559349
-    },
-    "Damansara": {
-        "lat": 3.1421452,
-        "lng": 101.6499125
-    },
-    "Damansara Heights": {
-        "lat": 3.149137,
-        "lng": 101.653394
-    },
-    "Desa Pandan": {
-        "lat": 3.14701,
-        "lng": 101.7373432
-    },
-    "Desa ParkCity": {
-        "lat": 3.186244,
-        "lng": 101.6299321
-    },
-    "Desa Petaling": {
-        "lat": 3.083485,
-        "lng": 101.7105289
-    },
-    "Duta Nusantara": {
-        "lat": 3.167803,
-        "lng": 101.6668508
-    },
-    "Dutamas": {
-        "lat": 3.178031,
-        "lng": 101.6609507
-    },
-    "Federal Hill": {
-        "lat": 3.137817000000001,
-        "lng": 101.679421
-    },
-    "Gombak": {
-        "lat": 3.2535016,
-        "lng": 101.6533256
-    },
-    "Gurney": {
-        "lat": 5.4346241,
-        "lng": 100.3147474
-    },
-    "Happy Garden": {
-        "lat": 3.084682,
-        "lng": 101.684641
-    },
-    "Jalan Ipoh": {
-        "lat": 3.175161,
-        "lng": 101.6865518
-    },
-    "Jalan Klang Lama (Old Klang Road)": {
-        "lat": 3.0871432,
-        "lng": 101.6736244
-    },
-    "Jalan Kuching": {
-        "lat": 3.2106809,
-        "lng": 101.671681
-    },
-    "Jalan Sultan Ismail": {
-        "lat": 3.1552829,
-        "lng": 101.7053617
-    },
-    "Jalan U-Thant": {
-        "lat": 3.1518356,
-        "lng": 101.7294828
-    },
-    "Jinjang": {
-        "lat": 3.211033,
-        "lng": 101.642303
-    },
-    "KL City": {
-        "lat": 3.139003,
-        "lng": 101.686855
-    },
-    "KL Eco City": {
-        "lat": 3.117958,
-        "lng": 101.673981
-    },
-    "KL Sentral": {
-        "lat": 3.1343385,
-        "lng": 101.6863371
-    },
-    "KLCC": {
-        "lat": 3.1580207,
-        "lng": 101.7116671
-    },
-    "Kemensah": {
-        "lat": 3.2218503,
-        "lng": 101.7786989
-    },
-    "Kepong": {
-        "lat": 3.213966,
-        "lng": 101.6355931
-    },
-    "Keramat": {
-        "lat": 3.1689298,
-        "lng": 101.7276507
-    },
-    "Kota Damansara": {
-        "lat": 3.1622148,
-        "lng": 101.5869321
-    },
-    "Kuchai Lama": {
-        "lat": 3.0839336,
-        "lng": 101.688328
-    },
-    "Mid Valley City": {
-        "lat": 3.117196,
-        "lng": 101.678054
-    },
-    "Mont Kiara": {
-        "lat": 3.168469,
-        "lng": 101.6511722
-    },
-    "OUG": {
-        "lat": 3.072557,
-        "lng": 101.67305
-    },
-    "Pandan Indah": {
-        "lat": 3.133892,
-        "lng": 101.7516751
-    },
-    "Pandan Jaya": {
-        "lat": 3.13536,
-        "lng": 101.74014
-    },
-    "Pandan Perdana": {
-        "lat": 3.117157,
-        "lng": 101.742133
-    },
-    "Petaling Jaya": {
-        "lat": 3.1278871,
-        "lng": 101.5944885
-    },
-    "Puchong": {
-        "lat": 3.0327152,
-        "lng": 101.618802
-    },
-    "Rawang": {
-        "lat": 3.320482,
-        "lng": 101.5759238
-    },
-    "Salak Selatan": {
-        "lat": 3.1049256,
-        "lng": 101.7055173
-    },
-    "Santuari Park Pantai": {
-        "lat": 3.0885789,
-        "lng": 101.6670248
-    },
-    "Segambut": {
-        "lat": 3.191726000000001,
-        "lng": 101.6733869
-    },
-    "Semarak": {
-        "lat": 3.17783,
-        "lng": 101.7211489
-    },
-    "Sentul": {
-        "lat": 3.2066139,
-        "lng": 101.6820313
-    },
-    "Seputeh": {
-        "lat": 3.115004,
-        "lng": 101.679651
-    },
-    "Seri Kembangan": {
-        "lat": 3.021998,
-        "lng": 101.7055411
-    },
-    "Setapak": {
-        "lat": 3.2790527,
-        "lng": 101.7409946
-    },
-    "Setiawangsa": {
-        "lat": 3.1830052,
-        "lng": 101.74618
-    },
-    "Solaris Dutamas": {
-        "lat": 3.170903,
-        "lng": 101.6660549
-    },
-    "Sri Damansara": {
-        "lat": 3.196851,
-        "lng": 101.6111781
-    },
-    "Sri Hartamas": {
-        "lat": 3.1599626,
-        "lng": 101.6520463
-    },
-    "Sri Petaling": {
-        "lat": 3.068411,
-        "lng": 101.6856335
-    },
-    "Sungai Besi": {
-        "lat": 3.057444,
-        "lng": 101.71787
-    },
-    "Sungai Long SL8": {
-        "lat": 3.0418032,
-        "lng": 101.7930748
-    },
-    "Sungai Penchala": {
-        "lat": 3.1620391,
-        "lng": 101.6245148
-    },
-    "Sunway SPK": {
-        "lat": 3.189883,
-        "lng": 101.621421
-    },
-    "Taman Connaught": {
-        "lat": 3.081594,
-        "lng": 101.736068
-    },
-    "Taman Desa": {
-        "lat": 3.102996,
-        "lng": 101.684501
-    },
-    "Taman Duta": {
-        "lat": 3.1608447,
-        "lng": 101.6758576
-    },
-    "Taman Ibukota": {
-        "lat": 3.211553,
-        "lng": 101.7149699
-    },
-    "Taman Melati": {
-        "lat": 3.2195325,
-        "lng": 101.7219271
-    },
-    "Taman Melawati": {
-        "lat": 3.212581,
-        "lng": 101.7470841
-    },
-    "Taman Sri Keramat": {
-        "lat": 3.1770333,
-        "lng": 101.7492559
-    },
-    "Taman Tun Abdul Razak": {
-        "lat": 3.1658453,
-        "lng": 101.763735
-    },
-    "Taman Tun Dr Ismail": {
-        "lat": 3.146122,
-        "lng": 101.6255459
-    },
-    "Taman U-Thant": {
-        "lat": 3.1568604,
-        "lng": 101.7328459
-    },
-    "Taman Wangsa Permai": {
-        "lat": 3.20845,
-        "lng": 101.6103701
-    },
-    "Taman Yarl": {
-        "lat": 3.070991,
-        "lng": 101.6677681
-    },
-    "The Mines Resort": {
-        "lat": 3.0320082,
-        "lng": 101.7171935
-    },
-    "Titiwangsa": {
-        "lat": 3.177383,
-        "lng": 101.707655
-    },
-    "Ukay Heights": {
-        "lat": 3.165799,
-        "lng": 101.7593719
-    },
-    "Wangsa Maju": {
-        "lat": 3.203764,
-        "lng": 101.7367351
-    },
-    "Wangsa Melawati": {
-        "lat": 3.203764,
-        "lng": 101.7367351
-    }
+  "ADIVA Desa ParkCity": [101.6278662, 3.1881946],
+  "Alam Damai": [101.7406559, 3.060074],
+  "Ampang": [101.7483451, 3.16648],
+  "Ampang Hilir": [101.7384594, 3.1580752],
+  "Bandar Damai Perdana": [101.740761, 3.047274],
+  "Bandar Menjalara": [101.63088, 3.193871],
+  "Bandar Sri Damansara": [101.6111781, 3.196851],
+  "Bandar Tasik Selatan": [101.7112674, 3.0761039],
+  "Bangsar": [101.6797838, 3.12901],
+  "Bangsar South": [101.6662729, 3.1106019],
+  "Batu Caves": [101.6840385, 3.2378844],
+  "Brickfields": [101.6861389, 3.129225],
+  "Bukit Bintang": [101.7113043, 3.1467855],
+  "Bukit Damansara": [101.653394, 3.149137],
+  "Bukit Jalil": [101.6917068, 3.0586745],
+  "Bukit Kiara": [101.644358, 3.142163],
+  "Bukit Ledang": [101.672193, 3.1501178],
+  "Bukit Persekutuan": [101.679421, 3.137817000000001],
+  "Bukit Tunku (Kenny Hills)": [101.690783, 3.163226],
+  "Canary Residence": [101.7497683, 3.0898322],
+  "Casa Rimba": [101.7361417, 3.2197822],
+  "Chan Sow Lin": [101.7155894, 3.1278462],
+  "Cheras": [101.7259197, 3.1068447],
+  "City Centre": [101.6958449, 3.146642],
+  "Country Heights Damansara": [101.6210599, 3.178361],
+  "Cyberjaya": [101.6559349, 2.921318],
+  "Damansara": [101.6499125, 3.1421452],
+  "Damansara Heights": [101.653394, 3.149137],
+  "Desa Pandan": [101.7373432, 3.14701],
+  "Desa ParkCity": [101.6299321, 3.186244],
+  "Desa Petaling": [101.7105289, 3.083485],
+  "Duta Nusantara": [101.6668508, 3.167803],
+  "Dutamas": [101.6609507, 3.178031],
+  "Federal Hill": [101.679421, 3.137817000000001],
+  "Gombak": [101.6533256, 3.2535016],
+  "Gurney": [100.3147474, 5.4346241],
+  "Happy Garden": [101.684641, 3.084682],
+  "Jalan Ipoh": [101.6865518, 3.175161],
+  "Jalan Klang Lama (Old Klang Road)": [101.6736244, 3.0871432],
+  "Jalan Kuching": [101.671681, 3.2106809],
+  "Jalan Sultan Ismail": [101.7053617, 3.1552829],
+  "Jalan U-Thant": [101.7294828, 3.1518356],
+  "Jinjang": [101.642303, 3.211033],
+  "KL City": [101.686855, 3.139003],
+  "KL Eco City": [101.673981, 3.117958],
+  "KL Sentral": [101.6863371, 3.1343385],
+  "KLCC": [101.7116671, 3.1580207],
+  "Kemensah": [101.7786989, 3.2218503],
+  "Kepong": [101.6355931, 3.213966],
+  "Keramat": [101.7276507, 3.1689298],
+  "Kota Damansara": [101.5869321, 3.1622148],
+  "Kuchai Lama": [101.688328, 3.0839336],
+  "Mid Valley City": [101.678054, 3.117196],
+  "Mont Kiara": [101.6511722, 3.168469],
+  "OUG": [101.67305, 3.072557],
+  "Pandan Indah": [101.7516751, 3.133892],
+  "Pandan Jaya": [101.74014, 3.13536],
+  "Pandan Perdana": [101.742133, 3.117157],
+  "Petaling Jaya": [101.5944885, 3.1278871],
+  "Puchong": [101.618802, 3.0327152],
+  "Rawang": [101.5759238, 3.320482],
+  "Salak Selatan": [101.7055173, 3.1049256],
+  "Santuari Park Pantai": [101.6670248, 3.0885789],
+  "Segambut": [101.6733869, 3.191726000000001],
+  "Semarak": [101.7211489, 3.17783],
+  "Sentul": [101.6820313, 3.2066139],
+  "Seputeh": [101.679651, 3.115004],
+  "Seri Kembangan": [101.7055411, 3.021998],
+  "Setapak": [101.7409946, 3.2790527],
+  "Setiawangsa": [101.74618, 3.1830052],
+  "Solaris Dutamas": [101.6660549, 3.170903],
+  "Sri Damansara": [101.6111781, 3.196851],
+  "Sri Hartamas": [101.6520463, 3.1599626],
+  "Sri Petaling": [101.6856335, 3.068411],
+  "Sungai Besi": [101.71787, 3.057444],
+  "Sungai Long SL8": [101.7930748, 3.0418032],
+  "Sungai Penchala": [101.6245148, 3.1620391],
+  "Sunway SPK": [101.621421, 3.189883],
+  "Taman Connaught": [101.736068, 3.081594],
+  "Taman Desa": [101.684501, 3.102996],
+  "Taman Duta": [101.6758576, 3.1608447],
+  "Taman Ibukota": [101.7149699, 3.211553],
+  "Taman Melati": [101.7219271, 3.2195325],
+  "Taman Melawati": [101.7470841, 3.212581],
+  "Taman Sri Keramat": [101.7492559, 3.1770333],
+  "Taman Tun Abdul Razak": [101.763735, 3.1658453],
+  "Taman Tun Dr Ismail": [101.6255459, 3.146122],
+  "Taman U-Thant": [101.7328459, 3.1568604],
+  "Taman Wangsa Permai": [101.6103701, 3.20845],
+  "Taman Yarl": [101.6677681, 3.070991],
+  "The Mines Resort": [101.7171935, 3.0320082],
+  "Titiwangsa": [101.707655, 3.177383],
+  "Ukay Heights": [101.7593719, 3.165799],
+  "Wangsa Maju": [101.7367351, 3.203764],
+  "Wangsa Melawati": [101.7367351, 3.203764]
 }

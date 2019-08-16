@@ -13,8 +13,11 @@ def geocode_towns(dataframe):
 
     for town in town_list:
         request = gmaps.geocode(town, region='my')
-        town_geocoded[town]['lat'] = request[0]['geometry']['location']['lat']
-        town_geocoded[town]['lng'] = request[0]['geometry']['location']['lng']
+        # this dict and array format is required by MongoDB
+        town_geocoded[town] = [
+            request[0]['geometry']['location']['lng'],
+            request[0]['geometry']['location']['lat']
+            ]
 
     return town_geocoded
 
