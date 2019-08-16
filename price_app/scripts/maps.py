@@ -3,6 +3,9 @@ import json
 import os
 
 import googlemaps
+from pymongo import GEOSPHERE
+
+from price_app.database import mongo
 
 
 def geocode_towns(dataframe):
@@ -29,6 +32,31 @@ def geocode_towns(dataframe):
     return towns_geocoded
 
 
-def save_to_json(geocode_dict):
+def save_to_json(towns_geocoded):
     with open('town_geo.json', 'w') as f:
-        print(json.dumps(geocode_dict), file=f)
+        print(json.dumps(towns_geocoded), file=f)
+
+
+def save_to_mongo(towns_geocoded):
+    result = mongo.db.posts.insert_many(towns_geocoded)
+    mongo.db.posts.create_index([("location", GEOSPHERE)])
+
+    return result
+
+
+def find_closest_points(lng, lat):
+    query = mongo.db.posts.aggregate([{
+        '$geoNear': {
+            'near': {
+                'type': 'Point',
+                'coordinates': [ float(lng) , float(lat) ]
+                },
+            'distanceField': 'dist.calculated',
+            'includeLocs': 'dist.location',
+            'spherical': 'true',
+            'limit': 3,
+            }
+        }])
+    result = list(query)
+
+    return result
