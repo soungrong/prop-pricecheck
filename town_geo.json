@@ -1,191 +1,571 @@
 [{
-  "ADIVA Desa ParkCity": [101.6278662, 3.1881946]
-}, {
-  "Alam Damai": [101.7406559, 3.060074]
-}, {
-  "Ampang": [101.7483451, 3.16648]
-}, {
-  "Ampang Hilir": [101.7384594, 3.1580752]
-}, {
-  "Bandar Damai Perdana": [101.740761, 3.047274]
-}, {
-  "Bandar Menjalara": [101.63088, 3.193871]
-}, {
-  "Bandar Sri Damansara": [101.6111781, 3.196851]
-}, {
-  "Bandar Tasik Selatan": [101.7112674, 3.0761039]
-}, {
-  "Bangsar": [101.6797838, 3.12901]
-}, {
-  "Bangsar South": [101.6662729, 3.1106019]
-}, {
-  "Batu Caves": [101.6840385, 3.2378844]
-}, {
-  "Brickfields": [101.6861389, 3.129225]
-}, {
-  "Bukit Bintang": [101.7113043, 3.1467855]
-}, {
-  "Bukit Damansara": [101.653394, 3.149137]
-}, {
-  "Bukit Jalil": [101.6917068, 3.0586745]
-}, {
-  "Bukit Kiara": [101.644358, 3.142163]
-}, {
-  "Bukit Ledang": [101.672193, 3.1501178]
-}, {
-  "Bukit Persekutuan": [101.679421, 3.137817000000001]
-}, {
-  "Bukit Tunku (Kenny Hills)": [101.690783, 3.163226]
-}, {
-  "Canary Residence": [101.7497683, 3.0898322]
-}, {
-  "Casa Rimba": [101.7361417, 3.2197822]
-}, {
-  "Chan Sow Lin": [101.7155894, 3.1278462]
-}, {
-  "Cheras": [101.7259197, 3.1068447]
-}, {
-  "City Centre": [101.6958449, 3.146642]
-}, {
-  "Country Heights Damansara": [101.6210599, 3.178361]
-}, {
-  "Cyberjaya": [101.6559349, 2.921318]
-}, {
-  "Damansara": [101.6499125, 3.1421452]
-}, {
-  "Damansara Heights": [101.653394, 3.149137]
-}, {
-  "Desa Pandan": [101.7373432, 3.14701]
-}, {
-  "Desa ParkCity": [101.6299321, 3.186244]
-}, {
-  "Desa Petaling": [101.7105289, 3.083485]
-}, {
-  "Duta Nusantara": [101.6668508, 3.167803]
-}, {
-  "Dutamas": [101.6609507, 3.178031]
-}, {
-  "Federal Hill": [101.679421, 3.137817000000001]
-}, {
-  "Gombak": [101.6533256, 3.2535016]
-}, {
-  "Gurney": [100.3147474, 5.4346241]
-}, {
-  "Happy Garden": [101.684641, 3.084682]
-}, {
-  "Jalan Ipoh": [101.6865518, 3.175161]
-}, {
-  "Jalan Klang Lama (Old Klang Road)": [101.6736244, 3.0871432]
-}, {
-  "Jalan Kuching": [101.671681, 3.2106809]
-}, {
-  "Jalan Sultan Ismail": [101.7053617, 3.1552829]
-}, {
-  "Jalan U-Thant": [101.7294828, 3.1518356]
-}, {
-  "Jinjang": [101.642303, 3.211033]
-}, {
-  "KL City": [101.686855, 3.139003]
-}, {
-  "KL Eco City": [101.673981, 3.117958]
-}, {
-  "KL Sentral": [101.6863371, 3.1343385]
-}, {
-  "KLCC": [101.7116671, 3.1580207]
-}, {
-  "Kemensah": [101.7786989, 3.2218503]
-}, {
-  "Kepong": [101.6355931, 3.213966]
-}, {
-  "Keramat": [101.7276507, 3.1689298]
-}, {
-  "Kota Damansara": [101.5869321, 3.1622148]
-}, {
-  "Kuchai Lama": [101.688328, 3.0839336]
-}, {
-  "Mid Valley City": [101.678054, 3.117196]
-}, {
-  "Mont Kiara": [101.6511722, 3.168469]
-}, {
-  "OUG": [101.67305, 3.072557]
-}, {
-  "Pandan Indah": [101.7516751, 3.133892]
-}, {
-  "Pandan Jaya": [101.74014, 3.13536]
-}, {
-  "Pandan Perdana": [101.742133, 3.117157]
-}, {
-  "Petaling Jaya": [101.5944885, 3.1278871]
-}, {
-  "Puchong": [101.618802, 3.0327152]
-}, {
-  "Rawang": [101.5759238, 3.320482]
-}, {
-  "Salak Selatan": [101.7055173, 3.1049256]
-}, {
-  "Santuari Park Pantai": [101.6670248, 3.0885789]
-}, {
-  "Segambut": [101.6733869, 3.191726000000001]
-}, {
-  "Semarak": [101.7211489, 3.17783]
-}, {
-  "Sentul": [101.6820313, 3.2066139]
-}, {
-  "Seputeh": [101.679651, 3.115004]
-}, {
-  "Seri Kembangan": [101.7055411, 3.021998]
-}, {
-  "Setapak": [101.7409946, 3.2790527]
-}, {
-  "Setiawangsa": [101.74618, 3.1830052]
-}, {
-  "Solaris Dutamas": [101.6660549, 3.170903]
-}, {
-  "Sri Damansara": [101.6111781, 3.196851]
-}, {
-  "Sri Hartamas": [101.6520463, 3.1599626]
-}, {
-  "Sri Petaling": [101.6856335, 3.068411]
-}, {
-  "Sungai Besi": [101.71787, 3.057444]
-}, {
-  "Sungai Long SL8": [101.7930748, 3.0418032]
-}, {
-  "Sungai Penchala": [101.6245148, 3.1620391]
-}, {
-  "Sunway SPK": [101.621421, 3.189883]
-}, {
-  "Taman Connaught": [101.736068, 3.081594]
-}, {
-  "Taman Desa": [101.684501, 3.102996]
-}, {
-  "Taman Duta": [101.6758576, 3.1608447]
-}, {
-  "Taman Ibukota": [101.7149699, 3.211553]
-}, {
-  "Taman Melati": [101.7219271, 3.2195325]
-}, {
-  "Taman Melawati": [101.7470841, 3.212581]
-}, {
-  "Taman Sri Keramat": [101.7492559, 3.1770333]
-}, {
-  "Taman Tun Abdul Razak": [101.763735, 3.1658453]
-}, {
-  "Taman Tun Dr Ismail": [101.6255459, 3.146122]
-}, {
-  "Taman U-Thant": [101.7328459, 3.1568604]
-}, {
-  "Taman Wangsa Permai": [101.6103701, 3.20845]
-}, {
-  "Taman Yarl": [101.6677681, 3.070991]
-}, {
-  "The Mines Resort": [101.7171935, 3.0320082]
-}, {
-  "Titiwangsa": [101.707655, 3.177383]
-}, {
-  "Ukay Heights": [101.7593719, 3.165799]
-}, {
-  "Wangsa Maju": [101.7367351, 3.203764]
-}, {
-  "Wangsa Melawati": [101.7367351, 3.203764]
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6278662, 3.1881946]
+  },
+  "town": "ADIVA Desa ParkCity"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7406559, 3.060074]
+  },
+  "town": "Alam Damai"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7483451, 3.16648]
+  },
+  "town": "Ampang"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7384594, 3.1580752]
+  },
+  "town": "Ampang Hilir"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.740761, 3.047274]
+  },
+  "town": "Bandar Damai Perdana"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.63088, 3.193871]
+  },
+  "town": "Bandar Menjalara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6111781, 3.196851]
+  },
+  "town": "Bandar Sri Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7112674, 3.0761039]
+  },
+  "town": "Bandar Tasik Selatan"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6797838, 3.12901]
+  },
+  "town": "Bangsar"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6662729, 3.1106019]
+  },
+  "town": "Bangsar South"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6840385, 3.2378844]
+  },
+  "town": "Batu Caves"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6861389, 3.129225]
+  },
+  "town": "Brickfields"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7113043, 3.1467855]
+  },
+  "town": "Bukit Bintang"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.653394, 3.149137]
+  },
+  "town": "Bukit Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6917068, 3.0586745]
+  },
+  "town": "Bukit Jalil"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.644358, 3.142163]
+  },
+  "town": "Bukit Kiara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.672193, 3.1501178]
+  },
+  "town": "Bukit Ledang"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.679421, 3.137817000000001]
+  },
+  "town": "Bukit Persekutuan"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.690783, 3.163226]
+  },
+  "town": "Bukit Tunku (Kenny Hills)"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7497683, 3.0898322]
+  },
+  "town": "Canary Residence"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7361417, 3.2197822]
+  },
+  "town": "Casa Rimba"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7155894, 3.1278462]
+  },
+  "town": "Chan Sow Lin"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7259197, 3.1068447]
+  },
+  "town": "Cheras"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6958449, 3.146642]
+  },
+  "town": "City Centre"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6210599, 3.178361]
+  },
+  "town": "Country Heights Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6559349, 2.921318]
+  },
+  "town": "Cyberjaya"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6499125, 3.1421452]
+  },
+  "town": "Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.653394, 3.149137]
+  },
+  "town": "Damansara Heights"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7373432, 3.14701]
+  },
+  "town": "Desa Pandan"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6299321, 3.186244]
+  },
+  "town": "Desa ParkCity"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7105289, 3.083485]
+  },
+  "town": "Desa Petaling"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6668508, 3.167803]
+  },
+  "town": "Duta Nusantara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6609507, 3.178031]
+  },
+  "town": "Dutamas"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.679421, 3.137817000000001]
+  },
+  "town": "Federal Hill"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6533256, 3.2535016]
+  },
+  "town": "Gombak"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [100.3147474, 5.4346241]
+  },
+  "town": "Gurney"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.684641, 3.084682]
+  },
+  "town": "Happy Garden"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6865518, 3.175161]
+  },
+  "town": "Jalan Ipoh"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6736244, 3.0871432]
+  },
+  "town": "Jalan Klang Lama (Old Klang Road)"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.671681, 3.2106809]
+  },
+  "town": "Jalan Kuching"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7053617, 3.1552829]
+  },
+  "town": "Jalan Sultan Ismail"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7294828, 3.1518356]
+  },
+  "town": "Jalan U-Thant"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.642303, 3.211033]
+  },
+  "town": "Jinjang"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.686855, 3.139003]
+  },
+  "town": "KL City"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.673981, 3.117958]
+  },
+  "town": "KL Eco City"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6863371, 3.1343385]
+  },
+  "town": "KL Sentral"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7116671, 3.1580207]
+  },
+  "town": "KLCC"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7786989, 3.2218503]
+  },
+  "town": "Kemensah"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6355931, 3.213966]
+  },
+  "town": "Kepong"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7276507, 3.1689298]
+  },
+  "town": "Keramat"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.5869321, 3.1622148]
+  },
+  "town": "Kota Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.688328, 3.0839336]
+  },
+  "town": "Kuchai Lama"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.678054, 3.117196]
+  },
+  "town": "Mid Valley City"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6511722, 3.168469]
+  },
+  "town": "Mont Kiara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.67305, 3.072557]
+  },
+  "town": "OUG"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7516751, 3.133892]
+  },
+  "town": "Pandan Indah"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.74014, 3.13536]
+  },
+  "town": "Pandan Jaya"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.742133, 3.117157]
+  },
+  "town": "Pandan Perdana"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.5944885, 3.1278871]
+  },
+  "town": "Petaling Jaya"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.618802, 3.0327152]
+  },
+  "town": "Puchong"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.5759238, 3.320482]
+  },
+  "town": "Rawang"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7055173, 3.1049256]
+  },
+  "town": "Salak Selatan"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6670248, 3.0885789]
+  },
+  "town": "Santuari Park Pantai"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6733869, 3.191726000000001]
+  },
+  "town": "Segambut"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7211489, 3.17783]
+  },
+  "town": "Semarak"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6820313, 3.2066139]
+  },
+  "town": "Sentul"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.679651, 3.115004]
+  },
+  "town": "Seputeh"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7055411, 3.021998]
+  },
+  "town": "Seri Kembangan"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7409946, 3.2790527]
+  },
+  "town": "Setapak"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.74618, 3.1830052]
+  },
+  "town": "Setiawangsa"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6660549, 3.170903]
+  },
+  "town": "Solaris Dutamas"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6111781, 3.196851]
+  },
+  "town": "Sri Damansara"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6520463, 3.1599626]
+  },
+  "town": "Sri Hartamas"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6856335, 3.068411]
+  },
+  "town": "Sri Petaling"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.71787, 3.057444]
+  },
+  "town": "Sungai Besi"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7930748, 3.0418032]
+  },
+  "town": "Sungai Long SL8"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6245148, 3.1620391]
+  },
+  "town": "Sungai Penchala"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.621421, 3.189883]
+  },
+  "town": "Sunway SPK"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.736068, 3.081594]
+  },
+  "town": "Taman Connaught"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.684501, 3.102996]
+  },
+  "town": "Taman Desa"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6758576, 3.1608447]
+  },
+  "town": "Taman Duta"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7149699, 3.211553]
+  },
+  "town": "Taman Ibukota"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7219271, 3.2195325]
+  },
+  "town": "Taman Melati"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7470841, 3.212581]
+  },
+  "town": "Taman Melawati"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7492559, 3.1770333]
+  },
+  "town": "Taman Sri Keramat"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.763735, 3.1658453]
+  },
+  "town": "Taman Tun Abdul Razak"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6255459, 3.146122]
+  },
+  "town": "Taman Tun Dr Ismail"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7328459, 3.1568604]
+  },
+  "town": "Taman U-Thant"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6103701, 3.20845]
+  },
+  "town": "Taman Wangsa Permai"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.6677681, 3.070991]
+  },
+  "town": "Taman Yarl"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7171935, 3.0320082]
+  },
+  "town": "The Mines Resort"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.707655, 3.177383]
+  },
+  "town": "Titiwangsa"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7593719, 3.165799]
+  },
+  "town": "Ukay Heights"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7367351, 3.203764]
+  },
+  "town": "Wangsa Maju"
+}, {
+  "location": {
+    "type": "Point",
+    "coordinates": [101.7367351, 3.203764]
+  },
+  "town": "Wangsa Melawati"
 }]

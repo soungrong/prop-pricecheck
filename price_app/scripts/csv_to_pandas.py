@@ -71,4 +71,4 @@ def save_to_mongo(dataframe):
 
     result = mongo.db.posts.insert_many(dataframe_dict)
 
-    return result.inserted_ids
+    return result

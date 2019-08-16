@@ -36,5 +36,5 @@ def csv_to_pandas_command(file_path, delimiter, quotechar, save):
         csv_filename = csv_to_pandas.save_to_csv(dataframe)
         click.echo('Saved to {}'.format(csv_filename))
     elif save == 'mongo':
-        created_record_ids = csv_to_pandas.save_to_mongo(dataframe)
-        click.echo('Saved to mongo. {} records created.'.format(len(created_record_ids)))
+        save_result = csv_to_pandas.save_to_mongo(dataframe)
+        click.echo('Saved to mongo. {} records created.'.format(len(save_result.inserted_ids)))
