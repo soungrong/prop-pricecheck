@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import pandas as pd
+import pymongo
 import numpy as np
 
 from price_app.database import mongo
@@ -69,6 +70,7 @@ def save_to_mongo(dataframe):
     # flatten rows/colums into individual dict records
     dataframe_dict = dataframe.reset_index().to_dict(orient='records')
 
-    result = mongo.db.posts.insert_many(dataframe_dict)
+    result = mongo.db.property.insert_many(dataframe_dict)
+    mongo.db.property.create_index([("town", pymongo.ASCENDING)])
 
     return result

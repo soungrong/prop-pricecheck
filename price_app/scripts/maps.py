@@ -3,7 +3,7 @@ import json
 import os
 
 import googlemaps
-from pymongo import GEOSPHERE
+import pymongo
 
 from price_app.database import mongo
 
@@ -11,10 +11,10 @@ from price_app.database import mongo
 def geocode_towns(dataframe):
     gmaps = googlemaps.Client(key=os.getenv('GOOGLE_MAPS_KEY'))
 
-    towns_names = dataframe.reset_index()['town'].unique()
-    towns_geocoded = []
+    town_names = dataframe.reset_index()['town'].unique()
+    town_geocoded = []
 
-    for town in towns_names:
+    for town in town_names:
         request = gmaps.geocode(town, region='my')
         # this dict and array format is required by MongoDB
         geo_entry = {
@@ -27,25 +27,25 @@ def geocode_towns(dataframe):
                     },
                 'town': town,
         }
-        towns_geocoded.append(geo_entry)
+        town_geocoded.append(geo_entry)
 
-    return towns_geocoded
+    return town_geocoded
 
 
-def save_to_json(towns_geocoded):
+def save_to_json(town_geocoded):
     with open('town_geo.json', 'w') as f:
-        print(json.dumps(towns_geocoded), file=f)
+        print(json.dumps(town_geocoded), file=f)
 
 
-def save_to_mongo(towns_geocoded):
-    result = mongo.db.posts.insert_many(towns_geocoded)
-    mongo.db.posts.create_index([("location", GEOSPHERE)])
+def save_to_mongo(town_geocoded):
+    result = mongo.db.town.insert_many(town_geocoded)
+    mongo.db.town.create_index([("location", pymongo.GEOSPHERE)])
 
     return result
 
 
 def find_closest_points(lng, lat):
-    query = mongo.db.posts.aggregate([{
+    query = mongo.db.town.aggregate([{
         '$geoNear': {
             'near': {
                 'type': 'Point',
