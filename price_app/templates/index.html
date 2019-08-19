@@ -11,7 +11,11 @@
 
 <body>
 
-  <input id="pac-input" class="controls" type="text" placeholder="Type here">
+  <form action="/" method="POST" name="pricecheck">
+    <input id="pac-input" name="location" type="text" placeholder="Type here">
+    <input type="submit" name="Submit"/>
+  </form>
+  <p id="form-response"></p>
 
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&libraries=places"></script>

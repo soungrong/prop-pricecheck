@@ -1,5 +1,9 @@
-#pac-input {
+form {
   display: block;
-  width: 500px;
+  width: 800px;
   margin: 10% auto;
+}
+
+#pac-input {
+  width: 75%;
 }
