@@ -12,8 +12,22 @@
 <body>
 
   <form action="/" method="POST" name="pricecheck">
-    <input id="pac-input" name="location" type="text" placeholder="Type here">
-    <input type="submit" name="Submit"/>
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" placeholder="Type a location name here, e.g. Ampang" required>
+
+    <label for="rooms">Rooms:</label>
+    <input type="number" name="rooms" id="rooms" placeholder="0" required>
+
+    <label for="plus_rooms">Plus Rooms:</label>
+    <input type="number" name="plus_rooms" id="plus_rooms" placeholder="0" required>
+
+    <label for="bathrooms">Bathrooms:</label>
+    <input type="number" name="bathrooms" id="bathrooms" placeholder="0" required>
+
+    <label for="car_parks">Car Parks:</label>
+    <input type="number" name="car_parks" id="car_parks" placeholder="0" required>
+
+    <input type="submit" name="Submit" />
   </form>
   <p id="form-response"></p>
 

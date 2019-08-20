@@ -17,13 +17,20 @@ def process(request):
     global gcloud_errors
 
     geo_data = json.loads(request.form['geometry'])
-
+    query = dict()
+    # TODO validate/sanitize input
+    form_data = request.form.to_dict().items()
+    for key, value in form_data:
+        if key != 'location' and key != 'geometry' and value != '':
+            query[key] = {
+                '$lte': float(value)
+                }
     try:
         points = maps.find_closest_points(geo_data['lng'], geo_data['lat'])
-        query = {
-            'town': points[0]['town'],
-        }
-        result = listing.find(**query)
-        return json_util.dumps(result)
+        query['town'] = points[0]['town']
+
+        result = listing.find(query)
+        return json_util.dumps(result[0])
+
     except BaseException:
         gcloud_errors.report_exception()

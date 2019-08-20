@@ -1,4 +1,4 @@
-var input = document.getElementById('pac-input');
+var input = document.getElementById('location');
 
 var options = {
 	types: ['geocode'],

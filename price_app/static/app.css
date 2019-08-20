@@ -4,6 +4,14 @@ form {
   margin: 10% auto;
 }
 
-#pac-input {
+label {
+  display: block;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+#location {
   width: 75%;
 }
