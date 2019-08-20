@@ -70,7 +70,7 @@ def save_to_mongo(dataframe):
     # flatten rows/colums into individual dict records
     dataframe_dict = dataframe.reset_index().to_dict(orient='records')
 
-    result = mongo.db.property.insert_many(dataframe_dict)
-    mongo.db.property.create_index([("town", pymongo.ASCENDING)])
+    result = mongo.db.listing.insert_many(dataframe_dict)
+    mongo.db.listing.create_index([("town", pymongo.ASCENDING)])
 
     return result

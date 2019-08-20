@@ -4,6 +4,6 @@ from price_app.database import mongo
 # if records returned are == 1, then don't do any further filtering and just return that.
 
 def find(town):
-    return mongo.db.property.find_one({
+    return mongo.db.listing.find_one({
         'town': town,
     })
