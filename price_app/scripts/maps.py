@@ -44,7 +44,7 @@ def save_to_mongo(town_geocoded):
     return result
 
 
-def find_closest_points(lng, lat):
+def find_closest_towns(lng, lat):
     query = mongo.db.town.aggregate([{
         '$geoNear': {
             'near': {

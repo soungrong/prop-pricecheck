@@ -26,8 +26,8 @@ def process(request):
                 '$lte': float(value)
                 }
     try:
-        points = maps.find_closest_points(geo_data['lng'], geo_data['lat'])
-        query['town'] = points[0]['town']
+        closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
+        query['town'] = closest_towns[0]['town']
 
         result = listing.find(query)
         return json_util.dumps(result[0])
