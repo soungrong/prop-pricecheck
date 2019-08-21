@@ -11,6 +11,7 @@ from price_app.database import mongo
 def geocode_towns(dataframe):
     gmaps = googlemaps.Client(key=os.getenv('GOOGLE_MAPS_KEY'))
 
+    # create a list of unique town_names
     town_names = dataframe.reset_index()['town'].unique()
     town_geocoded = []
 
@@ -55,10 +56,10 @@ def find_closest_towns(lng, lat):
             'distanceField': 'distance',
             'spherical': 'true',
             'limit': 3,
-            # do not include _id and location fields in returned records
             },
     },
     {
+        # do not include _id and location fields in returned records
         '$project': {
             "_id": 0,
             "location": 0,
