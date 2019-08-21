@@ -16,20 +16,20 @@ except DefaultCredentialsError:
 def process(request):
     global gcloud_errors
 
-    geo_data = json.loads(request.form['geometry'])
-    query = dict()
     # TODO validate/sanitize input
     form_data = request.form.to_dict().items()
+
+    listing_query = dict()
     for key, value in form_data:
         if key != 'location' and key != 'geometry' and value != '':
-            query[key] = {
+            listing_query[key] = {
                 '$lte': float(value)
                 }
     try:
+        geo_data = json.loads(request.form['geometry'])
         closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
-        query['closest_towns'] = closest_towns[0]['town']
 
-        result = listing.find(query)
+        result = listing.find(listing_query, closest_towns)
         return json_util.dumps(result[0])
 
     except BaseException:

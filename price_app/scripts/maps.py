@@ -45,18 +45,25 @@ def save_to_mongo(town_geocoded):
 
 
 def find_closest_towns(lng, lat):
+    # geoNear returns calculated distances in meters
     query = mongo.db.town.aggregate([{
         '$geoNear': {
             'near': {
                 'type': 'Point',
                 'coordinates': [ float(lng) , float(lat) ]
                 },
-            'distanceField': 'dist.calculated',
-            'includeLocs': 'dist.location',
+            'distanceField': 'distance',
             'spherical': 'true',
             'limit': 3,
-            }
-        }])
-    result = list(query)
+            # do not include _id and location fields in returned records
+            },
+    },
+    {
+        '$project': {
+            "_id": 0,
+            "location": 0,
+        },
+    }])
+    result = tuple(query)
 
     return result
