@@ -19,6 +19,7 @@ googlemaps = "*"
 [packages]
 google-cloud-error-reporting = "*"
 flask-pymongo = "*"
+voluptuous = "*"
 
 [requires]
 python_version = "3.7"

@@ -16,16 +16,54 @@
     <input type="text" name="location" id="location" placeholder="Type a location name here, e.g. Ampang" required>
 
     <label for="rooms">Rooms:</label>
-    <input type="number" name="rooms" id="rooms" placeholder="0" required>
+    <input type="number" name="rooms" id="rooms" placeholder="e.g. 1" required>
 
     <label for="plus_rooms">Plus Rooms:</label>
-    <input type="number" name="plus_rooms" id="plus_rooms" placeholder="0" required>
+    <input type="number" name="plus_rooms" id="plus_rooms" placeholder="e.g. 1" required>
 
     <label for="bathrooms">Bathrooms:</label>
-    <input type="number" name="bathrooms" id="bathrooms" placeholder="0" required>
+    <input type="number" name="bathrooms" id="bathrooms" placeholder="e.g. 1" required>
 
     <label for="car_parks">Car Parks:</label>
-    <input type="number" name="car_parks" id="car_parks" placeholder="0" required>
+    <input type="number" name="car_parks" id="car_parks" placeholder="e.g. 1" required>
+
+    <p>Optional Options</p>
+    <label for="property_type">Property Type:</label>
+    <select name="property_type" id="property_type">
+      <option value="">---</option>
+      <option value="Apartment">Apartment</option>
+      <option value="Bungalow">Bungalow</option>
+      <option value="Cluster House">Cluster House</option>
+      <option value="Condominium">Condominium</option>
+      <option value="Flat">Flat</option>
+      <option value="Semi-detached House">Semi-detached House</option>
+      <option value="Serviced Residence">Serviced Residence</option>
+      <option value="Terrace/Link House">Terrace/Link House</option>
+      <option value="Townhouse">Townhouse</option>
+    </select>
+
+    <label for="size">Size:</label>
+    <input type="number" name="size" id="size" placeholder="Size in square feet e.g. 1500">
+
+    <label for="floors">Storeys/Floors:</label>
+    <input type="number" name="floors" id="floors" placeholder="e.g. 1">
+
+    <label for="position">Position:</label>
+    <select name="position" id="position">
+      <option value="">---</option>
+      <option value="Corner">Corner</option>
+      <option value="EndLot">EndLot</option>
+      <option value="Intermediate">Intermediate</option>
+    </select>
+
+    <label for="furnishing">Furnishing:</label>
+    <select name="furnishing" id="furnishing">
+      <option value="">---</option>
+      <option value="Fully Furnished">Fully Furnished</option>
+      <option value="Partly Furnished">Partly Furnished</option>
+      <option value="Unfurnished">Unfurnished</option>
+    </select>
+
 
     <input type="submit" name="Submit" />
   </form>

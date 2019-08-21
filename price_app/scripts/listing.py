@@ -9,7 +9,6 @@ from price_app.database import mongo
 def find(listing_query, closest_towns):
 
     # iterate over all closest_town records until at least one listing is found
-    breakpoint()
     for record in closest_towns:
         try:
             listing_query.update(town=record['town'])
