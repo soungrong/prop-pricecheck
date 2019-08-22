@@ -32,13 +32,13 @@ def closest_town_match(listing_query, closest_towns):
     return (None,)
 
 
-def loose_criteria_match(listing_query, closest_towns):
+def closest_town_loose_match(listing_query, closest_towns):
     """
     Iterates over least_important_options, removing one criteria for each search
     attempt, until all least_important_options for all closest_towns are exhausted.
     Returns None if no matches are found.
     """
-    search_type = 'loose_criteria_match'
+    search_type = 'closest_town_loose_match'
     search_iterations = 0
 
     least_important_options = ('furnishing', 'position', 'floors', 'size',

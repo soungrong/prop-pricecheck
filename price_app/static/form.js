@@ -37,7 +37,12 @@ function formSubmission() {
     };
 
     request.send(formData);
+    return request
 }
+
+// JSON.parse(b.response)
+// JSON.stringify(Object.fromEntries(formData))
+// Object.fromEntries(formData)
 
 form.addEventListener('submit', function (event) {
 	formSubmission()

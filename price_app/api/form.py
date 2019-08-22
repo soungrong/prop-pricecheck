@@ -51,7 +51,7 @@ def process(request):
 
     search = listing.closest_town_match(listing_query, closest_towns)
     if search[0] is None:
-        search = listing.loose_criteria_match(listing_query, closest_towns)
+        search = listing.closest_town_loose_match(listing_query, closest_towns)
 
     search_result, search_type, search_iterations, search_distance = search
 
