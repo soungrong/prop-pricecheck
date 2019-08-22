@@ -15,6 +15,11 @@ except DefaultCredentialsError:
 
 
 def process(request):
+
+    # geometry form input is unvalidated
+    geo_data = json.loads(request.form['geometry'])
+    closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
+
     # All Optional fields are set to '' if no input was given
     form_validator = Schema({
         Required('rooms'): Coerce(int),
@@ -43,11 +48,13 @@ def process(request):
                 # so there's a higher probability of finding at least one match
                 '$lte': value,
                 }
-    geo_data = json.loads(request.form['geometry'])
-    closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
 
-    result = listing.strict_find(listing_query, closest_towns)
-    if result is None:
-        result = listing.loose_find(listing_query, closest_towns)
+    search_result, iterations, search_type = listing.strict_find(listing_query, closest_towns)
+    if search_result is None:
+        search_result, iterations, search_type = listing.loose_find(listing_query, closest_towns)
 
-    return json_util.dumps(result[0])
+    match = search_result[0].copy()
+    match['iterations'] = iterations
+    match['search_type'] = search_type
+
+    return json_util.dumps(match)
