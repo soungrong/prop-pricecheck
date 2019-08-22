@@ -13,7 +13,9 @@ def closest_town_match(listing_query, closest_towns):
 
     for record in closest_towns:
         search_iterations += 1
+        search_distance = record['distance']
         listing_query.update(town=record['town'])
+
         listings = mongo.db.listing.find(listing_query).limit(3).sort([
             ("rooms", pymongo.DESCENDING),
             ("plus_rooms", pymongo.DESCENDING),
@@ -23,11 +25,11 @@ def closest_town_match(listing_query, closest_towns):
             ])
         try:
             check_if_record_exists = listings[0]
-            return (listings, search_type, search_iterations)
+            return (listings, search_type, search_iterations, search_distance)
         except IndexError:
             continue
 
-    return (None, search_type, search_iterations)
+    return (None,)
 
 
 def loose_criteria_match(listing_query, closest_towns):
@@ -43,7 +45,10 @@ def loose_criteria_match(listing_query, closest_towns):
         'property_type')
 
     for record in closest_towns:
+        # copy listing_query values to loose_listing_query, so we can freely
+        # mutate loose_listing_query
         loose_listing_query = listing_query
+        search_distance = record['distance']
         loose_listing_query.update(town=record['town'])
 
         for criteria in least_important_options:
@@ -59,8 +64,8 @@ def loose_criteria_match(listing_query, closest_towns):
                     ])
                 try:
                     check_if_record_exists = listings[0]
-                    return (listings, search_type, search_iterations)
+                    return (listings, search_type, search_iterations, search_distance)
                 except IndexError:
                     continue
 
-    return (None, search_type, search_iterations)
+    return (None,)

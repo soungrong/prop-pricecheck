@@ -53,10 +53,11 @@ def process(request):
     if search[0] is None:
         search = listing.loose_criteria_match(listing_query, closest_towns)
 
-    search_result, search_type, search_iterations = search
+    search_result, search_type, search_iterations, search_distance = search
 
     match = search_result[0].copy()
     match['search_type'] = search_type
     match['search_iterations'] = search_iterations
+    match['search_distance'] = search_distance
 
     return json_util.dumps(match)
