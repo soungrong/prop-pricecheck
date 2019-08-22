@@ -15,8 +15,6 @@ except DefaultCredentialsError:
 
 
 def process(request):
-    global gcloud_errors
-
     # All Optional fields are set to '' if no input was given
     form_validator = Schema({
         Required('rooms'): Coerce(int),
@@ -36,18 +34,20 @@ def process(request):
     # form the query arguments that will be passed to Mongo
     listing_query = dict()
     for key, value in validated_form.items():
-        if value != '':
+        # property_type is a string value, so it's handled differently
+        if key == 'property_type' and value != '':
+            listing_query[key] = value
+        elif value != '':
             listing_query[key] = {
                 # find entries that are less than or equals to value
                 # so there's a higher probability of finding at least one match
                 '$lte': value,
                 }
-    try:
-        geo_data = json.loads(request.form['geometry'])
-        closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
+    geo_data = json.loads(request.form['geometry'])
+    closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])
 
-        result = listing.find(listing_query, closest_towns)
-        return json_util.dumps(result[0])
+    result = listing.strict_find(listing_query, closest_towns)
+    if result is None:
+        result = listing.loose_find(listing_query, closest_towns)
 
-    except BaseException:
-        gcloud_errors.report_exception()
+    return json_util.dumps(result[0])
