@@ -49,12 +49,14 @@ def process(request):
                 '$lte': value,
                 }
 
-    search_result, iterations, search_type = listing.strict_find(listing_query, closest_towns)
-    if search_result is None:
-        search_result, iterations, search_type = listing.loose_find(listing_query, closest_towns)
+    search = listing.closest_town_match(listing_query, closest_towns)
+    if search[0] is None:
+        search = listing.loose_criteria_match(listing_query, closest_towns)
+
+    search_result, search_type, search_iterations = search
 
     match = search_result[0].copy()
-    match['iterations'] = iterations
     match['search_type'] = search_type
+    match['search_iterations'] = search_iterations
 
     return json_util.dumps(match)

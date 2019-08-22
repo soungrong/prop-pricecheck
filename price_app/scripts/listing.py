@@ -3,12 +3,12 @@ import pymongo
 from price_app.database import mongo
 
 
-def strict_find(listing_query, closest_towns):
+def closest_town_match(listing_query, closest_towns):
     """
     Iterates over all closest_town records, with given listing query until
     closest_town tuple is exhausted. Returns None if no matches are found.
     """
-    search_type = 'strict'
+    search_type = 'closest_town_match'
     search_iterations = 0
 
     for record in closest_towns:
@@ -23,20 +23,20 @@ def strict_find(listing_query, closest_towns):
             ])
         try:
             check_if_record_exists = listings[0]
-            return (listings, search_iterations, search_type)
+            return (listings, search_type, search_iterations)
         except IndexError:
             continue
 
-    return (None, search_iterations, search_type)
+    return (None, search_type, search_iterations)
 
 
-def loose_find(listing_query, closest_towns):
+def loose_criteria_match(listing_query, closest_towns):
     """
     Iterates over least_important_options, removing one criteria for each search
     attempt, until all least_important_options for all closest_towns are exhausted.
     Returns None if no matches are found.
     """
-    search_type = 'loose'
+    search_type = 'loose_criteria_match'
     search_iterations = 0
 
     least_important_options = ('furnishing', 'position', 'floors', 'size',
@@ -59,8 +59,8 @@ def loose_find(listing_query, closest_towns):
                     ])
                 try:
                     check_if_record_exists = listings[0]
-                    return (listings, search_iterations, search_type)
+                    return (listings, search_type, search_iterations)
                 except IndexError:
                     continue
 
-    return (None, search_iterations, search_type)
+    return (None, search_type, search_iterations)
