@@ -11,6 +11,8 @@
 
 <body>
 
+<div class="container">
+
   <form action="/" method="POST" name="pricecheck">
     <label for="location">Location:</label>
     <input type="text" name="location" id="location" placeholder="Type a location name here, e.g. Ampang" required>
@@ -67,7 +69,10 @@
 
     <input type="submit" name="Submit" />
   </form>
+
   <p id="form-response"></p>
+
+</div>
 
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&libraries=places"></script>

@@ -1,7 +1,12 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 form {
   display: block;
   width: 800px;
-  margin: 10% auto;
+  margin: 5% auto 0 auto;
 }
 
 label {
