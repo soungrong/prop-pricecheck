@@ -40,6 +40,10 @@ returning matches.
 - Partly Furnished = 0.5
 - Unfurnished = 0 (if unspecified, assume it is unfurnished)
 
+Listings that have an unspecified level of furnishing is set as **Unfurnished**,
+based on the assumption that **Furnishing** is an obvious selling point that
+would have been specified, if there was any furnishing at all.
+
 2. Position
 - Intermediate = 1
 - Corner = 0.75
