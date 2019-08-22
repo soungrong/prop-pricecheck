@@ -26,8 +26,8 @@ def process(request):
         Optional('property_type', default=''): str,
         Optional('size'): Any(Coerce(int), ''),
         Optional('floors'): Any(Coerce(int), ''),
-        Optional('position', default=''): str,
-        Optional('furnishing', default=''): str,
+        Optional('position'): Any(Coerce(float), ''),
+        Optional('furnishing'): Any(Coerce(float), ''),
     }, extra=REMOVE_EXTRA)
 
     form_data = request.form.to_dict()
@@ -38,7 +38,8 @@ def process(request):
     for key, value in validated_form.items():
         if value != '':
             listing_query[key] = {
-                # lte = less than or equals to
+                # find entries that are less than or equals to value
+                # so there's a higher probability of finding at least one match
                 '$lte': value,
                 }
     try:
