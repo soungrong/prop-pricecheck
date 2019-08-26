@@ -31,6 +31,7 @@ def process(request):
         Optional('floors'): Any(Coerce(int), ''),
         Optional('position'): Any(Coerce(float), ''),
         Optional('furnishing'): Any(Coerce(float), ''),
+        Optional('user_sort_option', default='price'): str,
     }, extra=REMOVE_EXTRA)
 
     form_data = request.form.to_dict()
@@ -42,6 +43,8 @@ def process(request):
         # property_type is a string value, so it's handled differently
         if key == 'property_type' and value != '':
             listing_query[key] = value
+        elif key == 'user_sort_option' and value != '':
+            user_sort_option = value
         elif value != '':
             listing_query[key] = {
                 # find entries that are less than or equals to value
@@ -49,9 +52,9 @@ def process(request):
                 '$lte': value,
                 }
 
-    search = listing.closest_town_match(listing_query, closest_towns)
+    search = listing.closest_town_match(listing_query, closest_towns, user_sort_option)
     if search[0] is None:
-        search = listing.closest_town_loose_match(listing_query, closest_towns)
+        search = listing.closest_town_loose_match(listing_query, closest_towns, user_sort_option)
 
     search_result, search_type, search_iterations, search_distance = search
 
