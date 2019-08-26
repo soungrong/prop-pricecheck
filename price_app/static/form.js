@@ -7,29 +7,38 @@ var options = {
 
 autocomplete = new google.maps.places.Autocomplete(input, options);
 
-// autocomplete.getPlace().geometry.location.lat()
-// autocomplete.getPlace().geometry.location.lng()
-
 
 // Form Submission
 var form = document.querySelector("form[name='pricecheck']")
 var formSubmitButton = document.querySelector("form[name='pricecheck'] input[type='submit']")
 var formResponse = document.getElementById('form-response')
 
-function formSubmission() {
+function formSubmission(sortOption = '') {
 	form.reportValidity();
     formResponse.innerHTML = "Processing your submission.";
     formSubmitButton.disabled = true
 
 	let formData = new FormData(form);
 	let location = JSON.stringify(autocomplete.getPlace().geometry.location.toJSON())
-	formData.append('geometry', location)
+    formData.append('geometry', location)
+
+    if (sortOption != '') {
+        formData.append('user_sort_option', sortOption)
+    }
 
     let request = new XMLHttpRequest();
     request.open("POST", "/", true);
     request.onload = function (oEvent) {
         if (request.status == 200) {
             readableResponse(JSON.parse(request.response))
+            sortOptions.innerHTML = createSortOptions()
+
+            let sort_option = document.getElementById('sort_option_1')
+            sort_option.addEventListener('click', function (event) {
+                searchAgain()
+                event.preventDefault()
+            }, false);
+
         } else {
             formResponse.innerHTML = "Error " + request.status + " occurred when trying to process your submission.<br \/>";
         }
@@ -39,6 +48,29 @@ function formSubmission() {
     request.send(formData);
     return request
 }
+
+form.addEventListener('submit', function (event) {
+    formSubmission()
+    event.preventDefault()
+}, false);
+
+
+function searchAgain() {
+    let sort_option = document.getElementById('sort_option_1')
+    searchAgainParam = sort_option.getAttribute('href')
+
+    if (searchAgainParam == 'price_per_sq_ft') {
+        formSubmission('price_per_sq_ft')
+    }
+}
+
+// Form Search-Again Options
+var sortOptions = document.getElementById('search-again')
+
+function createSortOptions () {
+    return "<a id='sort_option_1' href='price_per_sq_ft'>Search again, but this time show me the lowest price per sq/ft.</a>"
+}
+
 
 function readableResponse(response) {
     if (response.search_type == 'closest_town_match') {
@@ -89,11 +121,6 @@ function parsePrice(response) {
     }
 }
 
-
-form.addEventListener('submit', function (event) {
-    formSubmission()
-    event.preventDefault()
-}, false);
 
 // form.addEventListener('keypress', function(event) {
 // 	if (event.key === 'Enter') {
