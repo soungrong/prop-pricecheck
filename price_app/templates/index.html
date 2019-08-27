@@ -6,74 +6,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
 </head>
 
 <body>
+  <section class="section">
+    <div class="container">
+      <form action="/" method="POST" name="pricecheck">
 
-<div class="container">
+        <div class="field">
+          <label class="label" for="location">Location:</label>
+          <div class="control">
+            <input class="input" type="text" name="location" id="location" placeholder="Type a location name here, e.g. Ampang" required>
+          </div>
+        </div>
 
-  <form action="/" method="POST" name="pricecheck">
-    <label for="location">Location:</label>
-    <input type="text" name="location" id="location" placeholder="Type a location name here, e.g. Ampang" required>
+        <div class="field">
+          <label class="label" for="rooms">Rooms:</label>
+          <div class="control">
+            <input class="input" type="number" name="rooms" id="rooms" placeholder="e.g. 1" required>
+          </div>
+        </div>
 
-    <label for="rooms">Rooms:</label>
-    <input type="number" name="rooms" id="rooms" placeholder="e.g. 1" required>
+        <div class="field">
+          <label class="label" for="plus_rooms">Plus Rooms:</label>
+            <div class="control">
+              <input class="input" type="number" name="plus_rooms" id="plus_rooms" placeholder="e.g. 1" required>
+            </div>
+        </div>
 
-    <label for="plus_rooms">Plus Rooms:</label>
-    <input type="number" name="plus_rooms" id="plus_rooms" placeholder="e.g. 1" required>
+        <div class="field">
+          <label class="label" for="bathrooms">Bathrooms:</label>
+            <div class="control">
+              <input class="input" type="number" name="bathrooms" id="bathrooms" placeholder="e.g. 1" required>
+            </div>
+        </div>
 
-    <label for="bathrooms">Bathrooms:</label>
-    <input type="number" name="bathrooms" id="bathrooms" placeholder="e.g. 1" required>
+        <div class="field">
+          <label class="label" for="car_parks">Car Parks:</label>
+            <div class="control">
+              <input class="input" type="number" name="car_parks" id="car_parks" placeholder="e.g. 1" required>
+            </div>
+        </div>
 
-    <label for="car_parks">Car Parks:</label>
-    <input type="number" name="car_parks" id="car_parks" placeholder="e.g. 1" required>
+        <p>Optional Options</p>
+        <div class="field">
+        <label class="label" for="property_type">Property Type:</label>
+          <div class="control">
+            <select class="select" name="property_type" id="property_type">
+              <option value="">---</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Bungalow">Bungalow</option>
+              <option value="Cluster House">Cluster House</option>
+              <option value="Condominium">Condominium</option>
+              <option value="Flat">Flat</option>
+              <option value="Semi-detached House">Semi-detached House</option>
+              <option value="Serviced Residence">Serviced Residence</option>
+              <option value="Terrace/Link House">Terrace/Link House</option>
+              <option value="Townhouse">Townhouse</option>
+            </select>
+          </div>
+        </div>
 
-    <p>Optional Options</p>
-    <label for="property_type">Property Type:</label>
-    <select name="property_type" id="property_type">
-      <option value="">---</option>
-      <option value="Apartment">Apartment</option>
-      <option value="Bungalow">Bungalow</option>
-      <option value="Cluster House">Cluster House</option>
-      <option value="Condominium">Condominium</option>
-      <option value="Flat">Flat</option>
-      <option value="Semi-detached House">Semi-detached House</option>
-      <option value="Serviced Residence">Serviced Residence</option>
-      <option value="Terrace/Link House">Terrace/Link House</option>
-      <option value="Townhouse">Townhouse</option>
-    </select>
+        <div class="field">
+          <label class="label" for="size">Size:</label>
+            <div class="control">
+              <input class="input" type="number" name="size" id="size" placeholder="Size in square feet e.g. 1500">
+            </div>
+        </div>
 
-    <label for="size">Size:</label>
-    <input type="number" name="size" id="size" placeholder="Size in square feet e.g. 1500">
+        <div class="field">
+          <label class="label" for="floors">Storeys/Floors:</label>
+            <div class="control">
+              <input class="input" type="number" name="floors" id="floors" placeholder="e.g. 1">
+            </div>
+        </div>
 
-    <label for="floors">Storeys/Floors:</label>
-    <input type="number" name="floors" id="floors" placeholder="e.g. 1">
+        <div class="field">
+          <label class="label" for="position">Position:</label>
+            <div class="control">
+              <select class="select" name="position" id="position">
+                <option value="">---</option>
+                <option value="0.75">Corner</option>
+                <option value="0.5">EndLot</option>
+                <option value="1">Intermediate</option>
+              </select>
+            </div>
+          </div>
 
-    <label for="position">Position:</label>
-    <select name="position" id="position">
-      <option value="">---</option>
-      <option value="0.75">Corner</option>
-      <option value="0.5">EndLot</option>
-      <option value="1">Intermediate</option>
-    </select>
+        <div class="field">
+          <label class="label" for="furnishing">Furnishing:</label>
+            <div class="control">
+              <select class="select" name="furnishing" id="furnishing">
+                <option value="">---</option>
+                <option value="1">Fully Furnished</option>
+                <option value="0.5">Partly Furnished</option>
+                <option value="0">Unfurnished</option>
+              </select>
+            </div>
+        </div>
 
-    <label for="furnishing">Furnishing:</label>
-    <select name="furnishing" id="furnishing">
-      <option value="">---</option>
-      <option value="1">Fully Furnished</option>
-      <option value="0.5">Partly Furnished</option>
-      <option value="0">Unfurnished</option>
-    </select>
+        <div class="field">
+          <div class="control">
+            <input class="button is-link" type="submit" name="Submit" />
+          </div>
+        </div>
+      </form>
 
+      <div class="card is-hidden" id="form-response">
+        <div class="card-content">
+          <p id="response-text"></p>
+        </div>
+      </div>
 
-    <input type="submit" name="Submit" />
-  </form>
+    </div>
 
-  <p id="form-response"></p>
-  <div id="search-again"></div>
+    <div class="container">
+      <div id="search-again"></div>
+    </div>
 
-</div>
+  </section>
 
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&libraries=places"></script>

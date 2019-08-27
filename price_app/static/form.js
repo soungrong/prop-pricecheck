@@ -11,11 +11,13 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 // Form Submission
 var form = document.querySelector("form[name='pricecheck']")
 var formSubmitButton = document.querySelector("form[name='pricecheck'] input[type='submit']")
-var formResponse = document.getElementById('form-response')
+var formResponseText = document.getElementById('response-text')
+var formResponseContainer = document.getElementById('form-response')
+
 
 function formSubmission(sortOption = '') {
 	form.reportValidity();
-    formResponse.innerHTML = "Processing your submission.";
+    formResponseText.innerHTML = "Processing your submission.";
     formSubmitButton.disabled = true
 
 	let formData = new FormData(form);
@@ -40,8 +42,9 @@ function formSubmission(sortOption = '') {
             }, false);
 
         } else {
-            formResponse.innerHTML = "Error " + request.status + " occurred when trying to process your submission.<br \/>";
+            formResponseText.innerHTML = "Error " + request.status + " occurred when trying to process your submission.<br \/>";
         }
+        formResponseContainer.classList.remove('is-hidden')
         formSubmitButton.disabled = false
     };
 
@@ -81,13 +84,13 @@ function readableResponse(response) {
 }
 
 function closestTownMatch(response) {
-    return formResponse.innerHTML = `${parseDistance(response)} ${parseCount(response)} ` +
+    return formResponseText.innerHTML = `${parseDistance(response)} ${parseCount(response)} ` +
                                     `${parsePrice(response)}`
 }
 
 function closestTownLooseMatch(response) {
-    return formResponse.innerHTML = `We couldn't find a match with your exact search ` +
-                                    `criteria, so we removed some of the optional requirements.` +
+    return formResponseText.innerHTML = `We couldn't find a match with your exact search ` +
+                                    `criteria, so we <i>removed</i> some of the optional requirements.` +
                                     `${parseDistance(response)} ${parseCount(response)} ` +
                                     `${parsePrice(response)}`
 }
@@ -95,29 +98,29 @@ function closestTownLooseMatch(response) {
 function parseDistance(response) {
     // search_distance is in meters
     if (response.search_distance >= 1000) {
-        return `The closest area that we found a listing for, is ${response.town}.`
+        return `The <i>closest</i> area that we found a listing for, is <b>${response.town}</b>.`
     } else {
-        return `We've found a listing within the area of ${response.town}.`
+        return `We've found a listing <i>within</i> the area of <b>${response.town}</b>.`
     }
 }
 
 function parseCount(response) {
     if (response.count > 1) {
-        return `We found more than one listing for your search criteria, ` +
-               `so we took an average of the listings.`
+        return `There is <b>more than one</b> listing for your search criteria, ` +
+               `so we took an <i>average</i> of the listings.`
     } else {
-        return `We only found one listing with your search criteria, ` +
-               `so it may be harder to find a similar offer.`
+        return `There is <b>only one</b> listing with your search criteria, ` +
+               `so it may be <i>harder</i> to find a similar offer.`
     }
 }
 
 function parsePrice(response) {
     if (response.count > 1) {
-        return `The listed average price is ${response.price} and price per sq/ft ` +
-               `is ${response.price_per_sq_ft}.`
+        return `The listed average price is <b>${response.price}</b> and price per sq/ft ` +
+               `is <b>${response.price_per_sq_ft}</b>.`
     } else {
-        return `The listed price is ${response.price}, and price per sq/ft ` +
-               `is ${response.price_per_sq_ft}.`
+        return `The listed price is <b>${response.price}</b>, and price per sq/ft ` +
+               `is <b>${response.price_per_sq_ft}</b>.`
     }
 }
 
