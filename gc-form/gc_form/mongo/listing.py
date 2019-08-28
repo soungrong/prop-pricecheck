@@ -1,6 +1,6 @@
 import pymongo
 
-from price_app.database import mongo
+from gc_form.mongo.instance import db
 
 
 def closest_town_match(listing_query, closest_towns, user_sort_option="price"):
@@ -28,7 +28,7 @@ def closest_town_match(listing_query, closest_towns, user_sort_option="price"):
         search_distance = record['distance']
         listing_query.update(town=record['town'])
 
-        listings = mongo.db.listing.find(listing_query).limit(3).sort(sort_by)
+        listings = db.listing.find(listing_query).limit(3).sort(sort_by)
         try:
             check_if_record_exists = listings[0]
             return (listings, search_type, search_iterations, search_distance)
@@ -72,7 +72,7 @@ def closest_town_loose_match(listing_query, closest_towns, user_sort_option="pri
             if loose_listing_query.pop(criteria, None) is not None:
                 # attempt a search if criteria was loosened
                 search_iterations += 1
-                listings = mongo.db.listing.find(loose_listing_query).limit(3).sort(sort_by)
+                listings = db.listing.find(loose_listing_query).limit(3).sort(sort_by)
                 try:
                     check_if_record_exists = listings[0]
                     return (listings, search_type, search_iterations, search_distance)

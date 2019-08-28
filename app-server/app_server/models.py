@@ -1,4 +1,4 @@
-from price_app.database import sql
+from app_server.database import sql
 
 
 class PropertyType(sql.Model):

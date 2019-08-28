@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pipenv run flask run
+poetry run flask

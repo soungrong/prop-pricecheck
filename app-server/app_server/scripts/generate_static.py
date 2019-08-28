@@ -1,6 +1,6 @@
 from flask_frozen import Freezer
 
-from price_app import create_app
+from app_server import create_app
 
 
 app = create_app()

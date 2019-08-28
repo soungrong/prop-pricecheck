@@ -1,7 +1,7 @@
 import csv
 
-from price_app.database import sql
-from price_app.models import Property, PropertyType, State, City, Town
+from app_server.database import sql
+from app_server.models import Property, PropertyType, State, City, Town
 
 
 def process_csv(file_path, delimiter=',', quotechar='"'):

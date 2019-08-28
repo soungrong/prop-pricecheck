@@ -1,5 +1,0 @@
-FLASK_APP=price_app
-FLASK_DEBUG=1
-SQLALCHEMY_DATABASE_URI=sqlite:////home/user/prop-pricecheck/instance/property.sqlite
-MONGO_DATABASE_URI=mongodb://localhost:27017/price_app
-GOOGLE_MAPS_KEY=replacethisvalue

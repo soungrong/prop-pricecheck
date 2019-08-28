@@ -4,7 +4,7 @@ import pandas as pd
 import pymongo
 import numpy as np
 
-from price_app.database import mongo
+from gc_form.mongo.instance import db
 
 
 # limit display output to 2 decimal places
@@ -70,7 +70,7 @@ def save_to_mongo(dataframe):
     # flatten rows/colums into individual dict records
     dataframe_dict = dataframe.reset_index().to_dict(orient='records')
 
-    result = mongo.db.listing.insert_many(dataframe_dict)
-    mongo.db.listing.create_index([("town", pymongo.ASCENDING)])
+    result = db.listing.insert_many(dataframe_dict)
+    db.listing.create_index([("town", pymongo.ASCENDING)])
 
     return result
