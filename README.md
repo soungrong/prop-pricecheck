@@ -50,14 +50,11 @@ would have been specified, if there was any furnishing at all.
 - EndLot = 0.5
 - Not specified = 0
 
-# Create/Apply migrations
-sh update_db.sh
-
 # Import dataset from CSV file
-sh populate_db.sh
+poetry run flask csv-to-pandas
 
 # Run interactive shell
-pipenv run shell
+poetry run shell
 
 # Run Flask server for local dev
 sh run_local.sh
