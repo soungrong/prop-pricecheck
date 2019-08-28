@@ -1,7 +1,7 @@
 # app-specific
 .python-version
 .vscode/
-.env.yaml
+.env*
 .netlify
 *.csv
 
