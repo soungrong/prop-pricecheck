@@ -16,9 +16,9 @@ from gc_form.mongo import maps, listing
 # tb['lat'] = lat
 # tb['lng'] = lng
 
-with open('app_server/data/town_geo.json') as json_file:
-    data = json.load(json_file)
-    towns.save_to_mongo(data)
+# with open('app_server/data/town_geo.json') as json_file:
+#     data = json.load(json_file)
+#     towns.save_to_mongo(data)
 
 # listing_query = {'rooms': {'$lte': 2}, 'plus_rooms': {'$lte': 1}, 'bathrooms': {'$lte': 2}, 'car_parks': {'$lte': 2}}
 
