@@ -21,7 +21,7 @@ ipython = "^7.7"
 jupyter = "^1.0"
 
 [tool.poetry.scripts]
-generate-static = "app_server.scripts.generate_static:main"
+generate-static = "app_server.scripts.generate_static:freeze"
 shell = "app_server.scripts.shell:main"
 
 [build-system]
