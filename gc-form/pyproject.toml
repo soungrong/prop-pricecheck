@@ -12,6 +12,10 @@ voluptuous = "^0.11.7"
 
 [tool.poetry.dev-dependencies]
 
+[tool.dephell.main]
+from = {format = "poetry", path = "pyproject.toml"}
+to = {format = "pip", path = "./gc_form/requirements.txt"}
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"

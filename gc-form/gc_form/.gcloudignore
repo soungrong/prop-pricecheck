@@ -13,7 +13,4 @@ env-example
 env-yaml-example
 
 # app-specific
-server.py
-run_server.sh
-templates/
-static/
+poetry.lock

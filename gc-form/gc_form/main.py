@@ -5,7 +5,10 @@ from google.cloud import error_reporting
 from google.auth.exceptions import DefaultCredentialsError
 from voluptuous import Any, Coerce, Optional, Required, REMOVE_EXTRA, Schema
 
-from gc_form.mongo import maps, listing
+try:
+    from mongo import maps, listing
+except ImportError:
+    from .mongo import maps, listing
 
 
 try:
@@ -15,7 +18,6 @@ except DefaultCredentialsError:
 
 
 def process_form(request):
-    breakpoint()
     # geometry form input is unvalidated
     geo_data = json.loads(request.form['geometry'])
     closest_towns = maps.find_closest_towns(geo_data['lng'], geo_data['lat'])

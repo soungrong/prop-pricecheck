@@ -1,6 +1,6 @@
 import pymongo
 
-from gc_form.mongo.instance import db
+from .instance import db
 
 
 def closest_town_match(listing_query, closest_towns, user_sort_option="price"):

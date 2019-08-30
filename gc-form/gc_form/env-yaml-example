@@ -1,0 +1,7 @@
+MONGO_HOST: "localhost"
+MONGO_PORT: "27017"
+MONGO_SSL: "false"
+MONGO_REPLICA_SET: "slug"
+MONGO_USERNAME: "user"
+MONGO_PASSWORD: "pass"
+MONGO_DATABASE: "price_app"

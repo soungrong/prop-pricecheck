@@ -1,10 +1,9 @@
 import json
 import os
 
-import googlemaps
 import pymongo
 
-from gc_form.mongo.instance import db
+from .instance import db
 
 
 def find_closest_towns(lng, lat, limit=None):

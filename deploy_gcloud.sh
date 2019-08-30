@@ -1,13 +1,12 @@
 #!/bin/bash
 
-sh ./price_app/scripts/pre_deploy_gcloud.sh
+sh ./gc-form/pre_deploy.sh
 
 # https://cloud.google.com/functions/docs/deploying/filesystem
-gcloud functions deploy arbitrary_name_of_function \
-    --source=./price_app/gcloud \
-    --env-vars-file=.env.yaml \
+gcloud functions deploy pricecheck-gc-form \
+    --source=./gc-form/gc_form \
     --runtime python37 \
-    --entry-point=name_of_parent_function_in_main_py \
+    --entry-point=process_form \
     --memory=128MB \
     --timeout=30s \
     --trigger-http
