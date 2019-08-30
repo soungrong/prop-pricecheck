@@ -24,12 +24,13 @@ from gc_form.mongo import maps, listing
 
 # b = maps.find_closest_towns(101.6278662, 3.1881946)
 
-try:
-    from IPython import embed
-    # temporary color fix https://github.com/ipython/ipython/issues/11523
-    embed(using=False)
-except ImportError:
-    import os
-    import readline
-    from pprint import pprint
-    os.environ['PYTHONINSPECT'] = 'True'
+def run():
+    try:
+        from IPython import embed
+        # temporary color fix https://github.com/ipython/ipython/issues/11523
+        embed(using=False)
+    except ImportError:
+        import os
+        import readline
+        from pprint import pprint
+        os.environ['PYTHONINSPECT'] = 'True'

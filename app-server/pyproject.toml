@@ -22,7 +22,7 @@ jupyter = "^1.0"
 
 [tool.poetry.scripts]
 generate-static = "app_server.scripts.generate_static:freeze"
-shell = "app_server.scripts.shell:main"
+shell = "app_server.shell:run"
 
 [build-system]
 requires = ["poetry>=0.12"]
