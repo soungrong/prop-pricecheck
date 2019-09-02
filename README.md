@@ -50,6 +50,33 @@ would have been specified, if there was any furnishing at all.
 - EndLot = 0.5
 - Not specified = 0
 
+# Scalingo MongoDB (mongo-sandbox plan)
+For some reason, an admin user and db is created along with the instance,
+but the password isn't provided. Additional users can't be created either.
+So we create an instance with the CLI tool, and then reset the password.
+
+## Download CLI tool
+https://doc.scalingo.com/cli
+
+## Create instance
+```
+$ scalingo -a <app_name> addons-add mongodb mongo-sandbox
+```
+
+## Instance setup
+Find out what the default user and db is called first.
+```
+$ scalingo -a <app_name> mongo-console
+$ show users
+```
+
+Then use these values to change the user password.
+```
+$ use <db_name>
+$ db.changeUserPassword("<username>", "<password>")
+```
+
+
 # Import dataset from CSV file
 poetry run flask csv-to-pandas
 
