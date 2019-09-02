@@ -58,6 +58,12 @@ So we create an instance with the CLI tool, and then reset the password.
 ## Download CLI tool
 https://doc.scalingo.com/cli
 
+## Set a region
+https://doc.scalingo.com/platform/internals/regions
+```
+$ scalingo config --region <region_code_name>
+```
+
 ## Create instance
 ```
 $ scalingo -a <app_name> addons-add mongodb mongo-sandbox
