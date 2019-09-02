@@ -3,10 +3,11 @@ import os
 
 import pymongo
 
-from .instance import db
+from .instance import Client
 
 
 def find_closest_towns(lng, lat, limit=None):
+    mongo = Client()
 
     query_args = {
         '$geoNear': {
@@ -23,7 +24,7 @@ def find_closest_towns(lng, lat, limit=None):
         query_args['$geoNear']['limit'] = limit
 
     # geoNear returns calculated distances in meters
-    query = db.town.aggregate([
+    query = mongo.db.town.aggregate([
         query_args,
         {
         # do not include _id and location fields in returned records

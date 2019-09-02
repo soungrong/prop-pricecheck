@@ -5,9 +5,14 @@ from google.cloud import error_reporting
 from google.auth.exceptions import DefaultCredentialsError
 from voluptuous import Any, Coerce, Optional, Required, REMOVE_EXTRA, Schema
 
+# this block handles the import nuances when deployed as a gcloud function
 try:
+    # non-relative import, since gc-form isn't installed as a package
+    # when deployed as a gcloud function
     from mongo import maps, listing
 except ImportError:
+    # relative import, when running the flask app-server in dev, since gc-form
+    # is installed as a package there
     from .mongo import maps, listing
 
 

@@ -1,10 +1,13 @@
+import os
 import json
 
 from app_server import create_app
 from app_server.scripts import csv_to_pandas, towns
-from gc_form.mongo.instance import db
 from gc_form.mongo import maps, listing
+from gc_form.mongo.instance import Client
 
+from dotenv import load_dotenv
+load_dotenv()
 
 # app = create_app()
 # app.app_context().push()

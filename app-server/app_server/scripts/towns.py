@@ -4,7 +4,7 @@ import os
 import googlemaps
 import pymongo
 
-from gc_form.mongo.instance import db
+from gc_form.mongo.instance import Client
 
 
 def geocode_towns(dataframe):
@@ -38,7 +38,8 @@ def save_to_json(town_geocoded):
 
 
 def save_to_mongo(town_geocoded):
-    result = db.town.insert_many(town_geocoded)
-    db.town.create_index([("location", pymongo.GEOSPHERE)])
+    mongo = Client()
+    result = mongo.db.town.insert_many(town_geocoded)
+    mongo.db.town.create_index([("location", pymongo.GEOSPHERE)])
 
     return result
