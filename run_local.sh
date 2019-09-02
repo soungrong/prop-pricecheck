@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd app-server
-poetry run flask
+poetry run flask run

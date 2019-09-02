@@ -1,15 +1,15 @@
 #!/bin/bash
 
-sh ./price_app/scripts/pre_deploy_netlify.sh
+sh ./app-server/pre_deploy.sh
 
-netlify deploy --dir=./price_app/build
+netlify deploy --dir=./app-server/app_server/build
 
 deploy_to_production () {
     echo "Deploy to production? y/n"
     read userinput
     if [ "$userinput" = "y" ]; then
         echo "Deploying to production."
-        netlify deploy --prod
+        netlify deploy --prod --dir=./app-server/app_server/build
         elif [ "$userinput" = "n" ]; then
             echo "Not deploying to production."
         else
