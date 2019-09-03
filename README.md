@@ -83,17 +83,33 @@ $ db.changeUserPassword("<username>", "<password>")
 ```
 
 
-# Import dataset from CSV file
+# App Scripts/CLI Commands
+Run these while you're _in_ the app-server/ DIR.
+
+**Import dataset from CSV file**
+```
 poetry run flask csv-to-pandas
+```
 
-# Run interactive shell
+**Run interactive shell**
+```
 poetry run shell
+```
 
-# Run Flask server for local dev
+___
+These exist in the project root, but can be called from wherever.
+
+**Run Flask server for local dev**
+```
 sh run_local.sh
+```
 
-# Deploy gcloud serverless function
+**Deploy gc-form/gc_form/ as gcloud serverless function**
+```
 sh deploy_gcloud.sh
+```
 
-# Deploy static files in build folder to netlify
+**Deploy app-server/app_server/ static files to Netlify**
+```
 sh deploy_netlify.sh
+```
