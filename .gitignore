@@ -1,4 +1,5 @@
 # app-specific
+ca.pem
 .python-version
 .vscode/
 .env.yaml

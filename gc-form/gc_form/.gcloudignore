@@ -1,5 +1,9 @@
 # https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
 #!include:.gitignore
+
+# to negate what was included in .gitignore
+!ca.pem
+
 .git
 .gitignore
 .editorconfig
