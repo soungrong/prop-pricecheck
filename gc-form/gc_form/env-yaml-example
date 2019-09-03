@@ -1,3 +1,5 @@
-IS_MONGO_PRODUCTION: 1
+IS_MONGO_PRODUCTION: "1"
 MONGO_FULL_CONNECTION_URL: "mongodb://<user>:<password>@<host>:<port>/<database_name>?replicaSet=<replica_set>&ssl=true"
 MONGO_DATABASE: "database_name"
+# Make sure there's no trailing slash in the CORS_DOMAIN URL
+CORS_DOMAIN: "https://static.site.domain.com"

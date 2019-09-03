@@ -5,6 +5,7 @@ sh ./gc-form/pre_deploy.sh
 # https://cloud.google.com/functions/docs/deploying/filesystem
 gcloud functions deploy pricecheck-gc-form \
     --source=./gc-form/gc_form \
+    --env-vars-file=./gc-form/gc_form/.env.yaml \
     --runtime python37 \
     --entry-point=process_form \
     --memory=128MB \
