@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Property Price Checker</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.bundle.css') }}">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 
 <body>
@@ -130,7 +130,7 @@
   </section>
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&libraries=places"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='form.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/form.js') }}"></script>
 </body>
 
 </html>
