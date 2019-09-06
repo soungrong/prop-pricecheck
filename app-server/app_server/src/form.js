@@ -29,7 +29,7 @@ function formSubmission(sortOption = '') {
     }
 
     let request = new XMLHttpRequest();
-    request.open("POST", "/", true);
+    request.open("POST", process.env.GC_FORM_URL, true);
     request.onload = function (oEvent) {
         if (request.status == 200) {
             readableResponse(JSON.parse(request.response))
@@ -123,11 +123,3 @@ function parsePrice(response) {
                `is <b>${response.price_per_sq_ft}</b>.`
     }
 }
-
-
-// form.addEventListener('keypress', function(event) {
-// 	if (event.key === 'Enter') {
-// 		formSubmission()
-// 		event.preventDefault();
-// 	}
-// }, false);
