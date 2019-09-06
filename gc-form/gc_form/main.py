@@ -3,31 +3,29 @@ import os
 
 from bson import json_util
 from flask import make_response
-from google.cloud import error_reporting
-from google.auth.exceptions import DefaultCredentialsError
 from voluptuous import Any, Coerce, Optional, Required, REMOVE_EXTRA, Schema
+
 
 # this block handles the import nuances when deployed as a gcloud function
 try:
     # non-relative import, since gc-form isn't installed as a package
     # when deployed as a gcloud function
     from mongo import maps, listing
+    from error_handling import ErrorHandler
 except ImportError:
     # relative import, when running the flask app-server in dev, since gc-form
     # is installed as a package there
     from .mongo import maps, listing
+    from .error_handling import ErrorHandler
 
-
-try:
-    gcloud_errors = error_reporting.Client()
-except DefaultCredentialsError:
-    pass
 
 CORS_DOMAIN = os.getenv('CORS_DOMAIN')
 
+error_handler = ErrorHandler()
+
 
 def process_form(request):
-    global gcloud_errors
+    global error_handler
 
     try:
         # geometry form input is unvalidated
@@ -79,7 +77,7 @@ def process_form(request):
 
         response = make_response(json_util.dumps(match), 200)
     except:
-        gcloud_errors.report_exception()
+        error_handler.report_exception()
         response = make_response(json_util.dumps(match), 500)
 
     response.headers['Access-Control-Allow-Origin'] = CORS_DOMAIN
