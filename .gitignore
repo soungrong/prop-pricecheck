@@ -6,6 +6,9 @@ ca.pem
 .netlify
 *.csv
 
+# ignore this folder, since these files are built from src
+app-server/app_server/static
+
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/

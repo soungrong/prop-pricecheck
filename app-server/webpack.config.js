@@ -2,10 +2,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './app_server/src/index.js',
+    entry: {
+        index: './app_server/src/index.js',
+        form: './app_server/src/form.js',
+        fontawesome: './node_modules/@fortawesome/fontawesome-free/js/all.min.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'app_server/static/js'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, 'app_server/static'),
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [{
@@ -23,7 +27,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'css/bulma.bundle.css'
+            filename: 'app.bundle.css'
         }),
     ]
 };
