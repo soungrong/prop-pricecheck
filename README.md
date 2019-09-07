@@ -1,25 +1,30 @@
-# What the Flask Server and SQLAlchemy+sqlite DB is used for
-1. To test the required client-side functionality. This involves loading HTML
-templates, and routing requests to the serverless functions contained in
-**gcloud.main**. Run **deploy_gcloud.sh** to generate gcloud's requirements and
-deploy the serverless functions to gcloud.
+**Warning! This project is pretty much pre-alpha. Peruse at your own risk.**
 
-2. Generate the necessary static files for deployment. This is handled by the
-Flask extension **frozen-flask**, which loads the configured Flask routes,
-simulates requests to them, and writes the responses to the **build** folder.
-Run **deploy_netlify.sh** to generate the static files, and deploy them with
-netlify.
 
-3. The CSV data set is loaded into the Local sqlite DB, and further processing
-is done to generate a flattened representation of the data set, ala NoSQL.
+# Project Overview
+The goal of this project is to help people make more informed property purchasing
+decisons, by processing publicly-available **property listing** data in a meaningful
+way, and returning the results in a form that doesn't require a user to do
+mental kungfu.
 
-e.g. maximum/minimum and average prices of a property type are calculated
-and inserted as a static value.
+Results are currently restricted to listings within Kuala Lumpur only.
 
-This NoSQL DB is then used as the production backend for the serverless function.
-The purpose of these multiple deployment hoops is to reduce the processing and
-storage overhead in production, which will hopefully keep any hosting costs low
-and result in more responsive site interaction.
+## Current Behavior
+1. _Required_ user inputs are location (with Google Maps Autocomplete),
+and number of rooms/plus rooms/bathrooms/car parks.
+2. The form is POSTed to a gcloud function, which runs a query routine involving
+a MongoDB instance.
+3. A record that's closest to the desired location and criteria is returned.
+
+## Current Architecture
+**gc-form package**: The layout and naming conventions within this package conform to the deployment
+requirements of a gcloud function. Running `deploy_gcloud.sh` deploys `gc_form/`
+as a gcloud function, with the necessary configuration and files self-contained.
+
+**app-server package**: This contains a bare minimum Flask app, which simulates the gcloud function
+endpoint, and holds the source of static files that's later built and deployed
+with Netlify.
+
 
 # Dataset Labels
 To increase the probability of returning a listing match, all query arguments
@@ -49,6 +54,7 @@ would have been specified, if there was any furnishing at all.
 - Corner = 0.75
 - EndLot = 0.5
 - Not specified = 0
+
 
 # Scalingo MongoDB (mongo-sandbox plan)
 For some reason, an admin user and db is created along with the instance,
